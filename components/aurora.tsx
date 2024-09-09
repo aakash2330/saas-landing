@@ -5,7 +5,6 @@ import { AnimationControls, motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import img from "../public/assets/Image1.png";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { HoverBorderGradientButton } from "./gradiant-button";
 
 export function Aurora() {
