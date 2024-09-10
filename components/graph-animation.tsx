@@ -1,0 +1,200 @@
+"use client";
+
+import React, { useEffect, useRef } from "react";
+import Snap from "snapsvg-cjs";
+import $ from "jquery"; // You might need to install jQuery if not already installed
+
+const LineDrawingAnimation = () => {
+  const svgRef = useRef(null);
+
+  useEffect(() => {
+    const prices = [
+      0, -95, -30, -65, -35, -215, -95, -70, -115, -100, -20, -200, -170,
+    ];
+
+    const draw = () => {
+      const paper = Snap(svgRef.current);
+      //@ts-expect-error - ignore
+      const chartH = $(svgRef.current).height();
+
+      //@ts-expect-error - ignore
+      const chartW = $(svgRef.current).width();
+
+      // Calculate adjusted prices to align with the bottom of the SVG
+      const adjustedPrices = prices.map((price) => price + chartH);
+      const steps = adjustedPrices.length;
+
+      //@ts-expect-error - ignore
+      const step = (i, chartW) => (chartW / steps) * i;
+
+      const points = [];
+      const breakPointsX = [];
+      const breakPointsY = [];
+      const point = {};
+
+      for (let i = 1; i < adjustedPrices.length; i++) {
+        const currStep = step(i, chartW);
+        const y = adjustedPrices[i];
+
+        //@ts-expect-error - ignore
+        point.x = Math.floor(currStep);
+
+        //@ts-expect-error - ignore
+        point.y = y;
+
+        const prev = i - 1;
+        const prevStep = step(prev, chartW);
+        const prevY = adjustedPrices[prev];
+
+        //@ts-expect-error - ignore
+        point.prevX = Math.floor(prevStep);
+
+        //@ts-expect-error - ignore
+        point.prevY = prevY;
+
+        //@ts-expect-error - ignore
+        if (point.prevX === 0 || point.prevY === 0) {
+          //@ts-expect-error - ignore
+          point.prevX = 15;
+
+          //@ts-expect-error - ignore
+          point.prevY = chartH - 15;
+        }
+
+        //@ts-expect-error - ignore
+        points[i] = `M${point.prevX},${point.prevY} L${point.x},${point.y}`;
+
+        //@ts-expect-error - ignore
+        breakPointsX[i] = point.x;
+
+        //@ts-expect-error - ignore
+        breakPointsY[i] = point.y;
+      }
+
+      // Draw lines
+      for (let i = 0; i < points.length; i++) {
+        const myPath = paper.path(points[i]);
+        const len = myPath.getTotalLength();
+        myPath.attr({
+          "stroke-dasharray": len,
+          "stroke-dashoffset": len,
+          stroke: "white",
+          "stroke-linecap": "round",
+          "stroke-width": 4,
+          "stroke-linejoin": "round",
+          id: `myLine${i}`,
+          class: "line",
+        });
+      }
+
+      // Draw breakpoints
+      for (let i = 0; i < points.length; i++) {
+        const circle = paper.circle(breakPointsX[i], breakPointsY[i], 5);
+        circle.attr({
+          fill: "black",
+          stroke: "white",
+          "stroke-width": 3,
+          id: `myCirc${i}`,
+          class: "breakpoint",
+        });
+      }
+
+      // Draw coordinate system
+      const xAxis = paper.path(`M0,${chartH}L${chartW},${chartH}`);
+      const yAxis = paper.path(`M0,${chartH}L0,0`);
+
+      const xOff = xAxis.getTotalLength();
+      const yOff = yAxis.getTotalLength();
+      const start = `${prices.length * 250}ms`;
+
+      yAxis.attr({
+        stroke: "white",
+        "stroke-width": 1,
+        "stroke-dasharray": yOff,
+        "stroke-dashoffset": yOff,
+        id: "yAxis",
+      });
+
+      xAxis.attr({
+        stroke: "white",
+        "stroke-width": 1,
+        "stroke-dasharray": xOff,
+        "stroke-dashoffset": xOff,
+        id: "xAxis",
+      });
+
+      $("#yAxis").css({
+        "-webkit-transition-delay": start,
+        "-webkit-transition": "all 200ms ease-in",
+      });
+
+      $("#xAxis").css({
+        "-webkit-transition-delay": start,
+        "-webkit-transition": "all 200ms ease-in",
+      });
+
+      $("#xAxis").animate({
+        "stroke-dashoffset": "0",
+      });
+
+      $("#yAxis").animate({
+        "stroke-dashoffset": "0",
+      });
+    };
+
+    const animate = () => {
+      for (let i = 0; i < prices.length; i++) {
+        const circ = $(`#myCirc${i}`);
+        const line = $(`#myLine${i}`);
+
+        circ.css({
+          "-webkit-transition": "all 550ms cubic-bezier(.84,0,.2,1)",
+          "-webkit-transition-delay": `${375 + i * 125}ms`,
+        });
+
+        line.css({
+          "-webkit-transition": "all 250ms cubic-bezier(.84,0,.2,1)",
+          "-webkit-transition-delay": `${i * 125}ms`,
+        });
+
+        line.animate({
+          "stroke-dashoffset": 0,
+        });
+
+        circ.css({
+          transform: "scale(1)",
+        });
+      }
+    };
+    if (window !== undefined) {
+      draw();
+      animate();
+    }
+  }, []);
+
+  return (
+    <div
+      style={{
+        width: "120rem",
+        height: "300px",
+        overflow: "hidden",
+      }}
+    >
+      <svg id="svg" ref={svgRef} width="500" height="300"></svg>
+      {/*
+      <button
+        id="draw"
+        onClick={() => {
+          $("#svg").empty();
+          draw();
+          animate();
+        }}
+      >
+        Redraw
+      </button>
+      */}
+    </div>
+  );
+};
+
+export default LineDrawingAnimation;

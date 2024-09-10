@@ -3,9 +3,15 @@
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { AnimationControls, motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
-import img from "../public/assets/Image1.png";
-import Image from "next/image";
 import { HoverBorderGradientButton } from "./gradiant-button";
+import dynamic from "next/dynamic";
+
+const DynamicLineDrawingAnimation = dynamic(
+  () => import("../components/graph-animation"),
+  {
+    ssr: false,
+  },
+);
 
 export function Aurora() {
   const cursoImageAnimateControls = useAnimation();
@@ -49,21 +55,19 @@ export function Aurora() {
             Extract insights with AI
           </div>
         </motion.div>
-        <HoverBorderGradientButton title="Try now for free"></HoverBorderGradientButton>
+        <button className="p-[3px] relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl" />
+          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white bg-transparent">
+            Try now for free
+          </div>
+        </button>
         <motion.div
           drag
           dragSnapToOrigin
           initial={{ y: 0 }}
           animate={cursoImageAnimateControls}
         >
-          <Image
-            src={img}
-            alt=""
-            height={500}
-            width={500}
-            className="max-w-none"
-            draggable="false"
-          />
+          <DynamicLineDrawingAnimation></DynamicLineDrawingAnimation>
         </motion.div>
       </div>
     </AuroraBackground>
