@@ -10,7 +10,7 @@ export function Hero() {
         <div className="flex items-center justify-center"></div>
         <Aurora></Aurora>
         <div className="flex justify-center">
-          <p className="mt-8 max-w-md text-center text-xl">
+          <p className="mt-8 text-white max-w-md text-center text-xl">
             Get a presentation style report of your data with key insights and
             correlations backed by Statistics and Graphs .
           </p>

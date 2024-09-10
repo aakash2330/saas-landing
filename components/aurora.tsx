@@ -31,7 +31,7 @@ export function Aurora() {
 
   return (
     <AuroraBackground>
-      <div className="flex gap-20 flex-col justify-center items-center">
+      <div className="flex gap-10 pt-[5rem] flex-col justify-center items-center">
         <motion.div
           initial={{ opacity: 0.0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,10 +42,10 @@ export function Aurora() {
           }}
           className="relative flex flex-col gap-4 items-center justify-center px-4"
         >
-          <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
+          <div className="text-3xl text-white md:text-7xl font-bold dark:text-white text-center">
             EasyAnalysis.ai
           </div>
-          <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
+          <div className="font-extralight text-white text-base md:text-4xl dark:text-neutral-200 py-4">
             Extract insights with AI
           </div>
         </motion.div>
@@ -59,8 +59,8 @@ export function Aurora() {
           <Image
             src={img}
             alt=""
-            height={300}
-            width={300}
+            height={500}
+            width={500}
             className="max-w-none"
             draggable="false"
           />
