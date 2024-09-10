@@ -7,7 +7,9 @@ export default function Home() {
     <div className="min-h-screen w-full flex flex-col justify-center items-center  antialiased">
       <Hero></Hero>
       <LogoTicker></LogoTicker>
-      <HeroSection></HeroSection>
+      {/*
+       *<HeroSection></HeroSection>
+       */}
     </div>
   );
 }

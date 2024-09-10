@@ -80,7 +80,7 @@ const LineDrawingAnimation = () => {
           "stroke-dashoffset": len,
           stroke: "white",
           "stroke-linecap": "round",
-          "stroke-width": 4,
+          "stroke-width": 1,
           "stroke-linejoin": "round",
           id: `myLine${i}`,
           class: "line",
@@ -91,9 +91,9 @@ const LineDrawingAnimation = () => {
       for (let i = 0; i < points.length; i++) {
         const circle = paper.circle(breakPointsX[i], breakPointsY[i], 5);
         circle.attr({
-          fill: "black",
+          fill: "none",
           stroke: "white",
-          "stroke-width": 3,
+          "stroke-width": 2,
           id: `myCirc${i}`,
           class: "breakpoint",
         });
@@ -105,7 +105,6 @@ const LineDrawingAnimation = () => {
 
       const xOff = xAxis.getTotalLength();
       const yOff = yAxis.getTotalLength();
-      const start = `${prices.length * 250}ms`;
 
       yAxis.attr({
         stroke: "white",
@@ -121,24 +120,6 @@ const LineDrawingAnimation = () => {
         "stroke-dasharray": xOff,
         "stroke-dashoffset": xOff,
         id: "xAxis",
-      });
-
-      $("#yAxis").css({
-        "-webkit-transition-delay": start,
-        "-webkit-transition": "all 200ms ease-in",
-      });
-
-      $("#xAxis").css({
-        "-webkit-transition-delay": start,
-        "-webkit-transition": "all 200ms ease-in",
-      });
-
-      $("#xAxis").animate({
-        "stroke-dashoffset": "0",
-      });
-
-      $("#yAxis").animate({
-        "stroke-dashoffset": "0",
       });
     };
 
@@ -172,29 +153,7 @@ const LineDrawingAnimation = () => {
     }
   }, []);
 
-  return (
-    <div
-      style={{
-        width: "120rem",
-        height: "300px",
-        overflow: "hidden",
-      }}
-    >
-      <svg id="svg" ref={svgRef} width="500" height="300"></svg>
-      {/*
-      <button
-        id="draw"
-        onClick={() => {
-          $("#svg").empty();
-          draw();
-          animate();
-        }}
-      >
-        Redraw
-      </button>
-      */}
-    </div>
-  );
+  return <svg id="svg" ref={svgRef} className="h-[20rem] w-[20rem] -rotate-12"></svg>;
 };
 
 export default LineDrawingAnimation;

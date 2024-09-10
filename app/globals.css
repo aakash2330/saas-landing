@@ -29,10 +29,10 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
 
-		--navigation-height: 3.5rem;
-		--color-one: #ffbd7a;
-		--color-two: #fe8bbb;
-		--color-three: #9e7aff;
+    --navigation-height: 3.5rem;
+    --color-one: #ffbd7a;
+    --color-two: #fe8bbb;
+    --color-three: #9e7aff;
   }
 
   .dark {
@@ -97,41 +97,26 @@
   }
 }
 
-
 #draw {
-  cursor:pointer;
-  left:0;
-  position:absolute;
-  top:0%;
-  width:10%;
-  padding: 15px 10px;
   border-radius: 20px;
-  margin:20px;
-  border:4px solid white;
-  text-transform:uppercase;
+  border: 2px solid white;
+  text-transform: uppercase;
   letter-spacing: 4px;
-  color:white;
+  color: white;
 }
 #draw:focus {
-  outline:none;
+  outline: none;
 }
 #svg {
-    top: 60%;
-    left:50%;
-    width:30%;
-    height:80%;
-    position:relative;
-    -webkit-transform:translate3d(-50%,-50%,0);   
 }
 .line {
-  stroke-dashoffset:0;
+  stroke-dashoffset: 0;
   box-shadow: 10px 10px 1px black;
 }
-.breakpoint{
-  transform:scale(0);
-  position:absolute;
-  -webkit-transform-origin:50% 50%;
+.breakpoint {
+  transform: scale(0);
+  position: absolute;
 }
-.active{
-  transform:scale(1)
+.active {
+  transform: scale(1);
 }
