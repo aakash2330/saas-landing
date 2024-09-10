@@ -87,11 +87,18 @@ const LineDrawingAnimation = () => {
         });
       }
 
-      // Draw breakpoints
-      for (let i = 0; i < points.length; i++) {
-        const circle = paper.circle(breakPointsX[i], breakPointsY[i], 5);
-        circle.attr({
-          fill: "none",
+      // Draw "X" shaped breakpoints
+      for (let i = 0; i < points.length - 1; i++) {
+        const size = 5; // size of the X
+        const x = breakPointsX[i];
+        const y = breakPointsY[i];
+
+        // Draw two crossing lines to form an "X"
+        const xShape = paper.path(
+          `M${x - size},${y - size} L${x + size},${y + size} M${x + size},${y - size} L${x - size},${y + size}`,
+        );
+
+        xShape.attr({
           stroke: "white",
           "stroke-width": 2,
           id: `myCirc${i}`,
@@ -153,7 +160,13 @@ const LineDrawingAnimation = () => {
     }
   }, []);
 
-  return <svg id="svg" ref={svgRef} className="h-[20rem] w-[20rem] -rotate-12"></svg>;
+  return (
+    <>
+      <div>
+        <svg id="svg" ref={svgRef} className="h-[20rem] w-[20rem] "></svg>
+      </div>
+    </>
+  );
 };
 
 export default LineDrawingAnimation;

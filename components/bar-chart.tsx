@@ -26,21 +26,32 @@ const chartConfig = {
 
 export function BarChartExample() {
   return (
-    <>
-      <ChartContainer config={chartConfig} className="size-[15rem] rotate-12">
+    <div>
+      <svg width="0" height="0">
+        <defs>
+          <linearGradient id="strokeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="white" />
+            <stop offset="100%" stopColor="transparent" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <ChartContainer
+        key={Math.random()}
+        config={chartConfig}
+        className="size-[15rem]"
+      >
         <BarChart accessibilityLayer data={chartData}>
           <Bar
             animationDuration={3000}
             isAnimationActive={true}
             animationBegin={0}
             dataKey="desktop"
-            strokeWidth={2}
-            radius={8}
-            stroke="white"
+            strokeWidth={1}
+            stroke="url(#strokeGradient)"
             fill="none"
           />
         </BarChart>
       </ChartContainer>
-    </>
+    </div>
   );
 }

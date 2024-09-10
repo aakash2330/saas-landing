@@ -41,6 +41,7 @@ export function Aurora() {
         <div>
           <motion.div
             drag
+            key={Math.random()}
             dragSnapToOrigin
             initial={{ y: 0 }}
             animate={cursoImageAnimateControls}
@@ -63,10 +64,17 @@ export function Aurora() {
               EasyAnalysis.ai
             </div>
             <div className="font-extralight text-white text-base md:text-4xl dark:text-neutral-200 py-4">
-              Extract insights with AI
+              Extract insights from data with AI
             </div>
           </motion.div>
-          <button className="bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 z-[999] hover:cursor  text-white font-semibold py-2 px-4 rounded-xl">
+
+          <button
+            className="text-white py-2 px-4 rounded-xl transform transition-transform duration-200 hover:scale-105"
+            style={{
+              background:
+                "linear-gradient(130deg, #1764FC 0%, #9F1BB5 50%, #F4771C 100%)",
+            }}
+          >
             Upload your Excel file
           </button>
         </div>
