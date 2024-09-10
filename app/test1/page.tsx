@@ -1,9 +1,9 @@
-import { BarChartExample } from "@/components/bar-chart";
+import { BackgroundGradientAnimationDemo } from "@/components/gradiant-animation-background";
 
 export default function Page() {
   return (
     <div>
-      <BarChartExample></BarChartExample>
+      <BackgroundGradientAnimationDemo></BackgroundGradientAnimationDemo>
     </div>
   );
 }

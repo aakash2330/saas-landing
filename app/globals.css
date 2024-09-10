@@ -74,8 +74,8 @@
 
 @layer base {
   :root {
-    --rainbow-gradient: rgba(252, 214, 255, 0.7), hsla(191, 100%, 58%, 0.7),
-      hsla(59, 100%, 75%, 0.7), hsla(336, 87%, 79%, 0.7);
+    --rainbow-gradient: rgba(23, 100, 252, 0.7), rgba(159, 27, 181, 0.7),
+      rgba(244, 119, 28, 0.7);
 
     --purple-gradient: hsl(0, 0%, 0%), hsl(262, 67%, 15%) 34%,
       hsl(262, 66%, 38%) 65%, hsl(270, 60%, 65%) 82%;
@@ -92,8 +92,8 @@
   }
 
   .bg-hero {
-    @apply bg-[linear-gradient(to_bottom,)];
-    --tw-gradient-stops: #000, #200D42_34%, #4F21A1_65%, #A46EDB_82%;
+    @apply bg-[linear-gradient(130deg, rgba(23, 100, 252, 0.7), rgba(159, 27, 181, 0.7), rgba(244, 119, 28, 0.7))];
+    --tw-gradient-stops: #1764fc, #9F1BB5_50%, #F4771C_100%;
   }
 }
 

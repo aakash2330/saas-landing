@@ -5,6 +5,7 @@ import { AnimationControls, motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { BarChartExample } from "./bar-chart";
+import { BackgroundGradientAnimation } from "./ui/gradiant-background";
 
 const DynamicLineDrawingAnimation = dynamic(
   () => import("../components/graph-animation"),
@@ -36,8 +37,8 @@ export function Aurora() {
   }, [cursoImageAnimateControls, messageImageAnimateControls]);
 
   return (
-    <AuroraBackground>
-      <div className="flex  gap-5 justify-center items-center">
+    <BackgroundGradientAnimation>
+      <div className="flex mt-[10%]  p-20 gap-5 justify-center items-center">
         <div>
           <motion.div
             drag
@@ -49,7 +50,7 @@ export function Aurora() {
             <BarChartExample></BarChartExample>
           </motion.div>
         </div>
-        <div className="flex flex-col justify-center gap-14 items-center">
+        <div className="flex flex-1 flex-col justify-center gap-14 items-center">
           <motion.div
             initial={{ opacity: 0.0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +70,7 @@ export function Aurora() {
           </motion.div>
 
           <button
-            className="text-white py-2 px-4 rounded-xl transform transition-transform duration-200 hover:scale-105"
+            className="text-white z-[999] py-2 px-4 rounded-xl transform transition-transform duration-200 hover:scale-105"
             style={{
               background:
                 "linear-gradient(130deg, #1764FC 0%, #9F1BB5 50%, #F4771C 100%)",
@@ -78,7 +79,7 @@ export function Aurora() {
             Upload your Excel file
           </button>
         </div>
-        <div className="h-[20rem] w-[20rem]">
+        <div className="size-[15rem] flex justify-center items-center">
           <motion.div
             drag
             dragSnapToOrigin
@@ -89,6 +90,6 @@ export function Aurora() {
           </motion.div>
         </div>
       </div>
-    </AuroraBackground>
+    </BackgroundGradientAnimation>
   );
 }

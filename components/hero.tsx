@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { Aurora } from "./aurora";
+import img from "../public/assets/Image3.png";
 
 export function Hero() {
   return (
@@ -9,13 +11,15 @@ export function Hero() {
       <div className="w-full">
         <div className="flex items-center justify-center"></div>
         <Aurora></Aurora>
-        <div className="flex justify-center">
-          <p className="mt-8 text-white z-[999] max-w-md text-center text-xl">
-            Get a presentation style report of your data with key insights and
-            correlations backed by Statistics and Graphs .
-          </p>
+        <div className="flex justify-center items-center ">
+          <Image
+            width={700}
+            height={700}
+            src={img}
+            alt=""
+            className="z-[999]"
+          ></Image>
         </div>
-        <div className="mt-8 flex justify-center"></div>
       </div>
     </div>
   );
