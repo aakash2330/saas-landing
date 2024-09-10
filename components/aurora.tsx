@@ -38,7 +38,7 @@ export function Aurora() {
 
   return (
     <BackgroundGradientAnimation>
-      <div className="flex mt-[10%]  p-20 gap-5 justify-center items-center">
+      <div className="flex mt-[10%] gap-5  p-20  justify-center items-center">
         <div>
           <motion.div
             drag
@@ -50,7 +50,7 @@ export function Aurora() {
             <BarChartExample></BarChartExample>
           </motion.div>
         </div>
-        <div className="flex flex-1 flex-col justify-center gap-14 items-center">
+        <div className="flex  flex-col justify-center gap-14 items-center">
           <motion.div
             initial={{ opacity: 0.0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
