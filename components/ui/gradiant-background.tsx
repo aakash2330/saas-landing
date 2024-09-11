@@ -119,19 +119,19 @@ export const BackgroundGradientAnimation = ({
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,_rgba(var(--third-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat]`,
-            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-50%-var(--size)/2)] right-[calc(10%-var(--size)/2)]`, // Adjusted to start from the right
+            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-50%-var(--size)/2)] right-[calc(30%-var(--size)/2)]`, // Adjusted to start from the right
             `[transform-origin:calc(50%-400px)]`,
             `animate-horizontal-middle-reverse`,
-            `opacity-70`,
+            `opacity-90`,
           )}
         ></div>
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,_rgba(var(--fourth-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat]`,
-            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-50%-var(--size)/2)] left-[calc(10%-var(--size)/2)]`, // Adjusted top value
+            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-50%-var(--size)/2)] left-[calc(30%-var(--size)/2)]`, // Adjusted top value
             `[transform-origin:calc(50%+400px)]`,
             `animate-horizontal-middle`,
-            `opacity-70`,
+            `opacity-90`,
           )}
         ></div>
         <div
