@@ -1,7 +1,5 @@
-import { FeaturesSectionDemo } from "@/components/bento-grid";
+import { ContactUsSection } from "@/components/contact-us-section";
 
 export default function Page() {
-  return (
-      <FeaturesSectionDemo></FeaturesSectionDemo>
-  );
+  return <ContactUsSection></ContactUsSection>;
 }
