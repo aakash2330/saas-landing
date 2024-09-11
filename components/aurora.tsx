@@ -64,7 +64,7 @@ export function Aurora() {
             <div className="text-3xl z-[999] text-white md:text-7xl font-bold dark:text-white text-center">
               EasyAnalysis.ai
             </div>
-            <div className="font-extralight text-white text-base md:text-4xl dark:text-neutral-200 py-4">
+            <div className="font-extralight z-[999] text-white text-base md:text-4xl dark:text-neutral-200 py-4">
               Extract insights from data with AI
             </div>
           </motion.div>

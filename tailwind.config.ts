@@ -158,7 +158,7 @@ const config = {
         shimmer: "shimmer 2s linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         first: "moveVertical 10s ease infinite",
-        second: "moveVertical 10s reverse ease forwards",
+        second: "moveVertical 10s reverse ease infinite",
         third: "moveVertical 10s linear infinite",
         fourth: "moveHorizontal 10s linear infinite",
         fifth: "moveInCircle 10s ease infinite",
