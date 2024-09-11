@@ -78,6 +78,11 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "horizontal-middle": {
+          "0%": { transform: "translateX(-25%)" },
+          "50%": { transform: "translateX(25%)" },
+          "100%": { transform: "translateX(-25%)" },
+        },
         moveHorizontal: {
           "0%": {
             transform: "translateX(-50%) translateY(-10%)",
@@ -143,16 +148,16 @@ const config = {
         },
       },
       animation: {
+        "horizontal-middle": "horizontal-middle 10s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 2s linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         first: "moveVertical 20s ease infinite",
-        second: "moveInCircle 20s reverse infinite",
-        third: "moveInCircle 20s linear infinite",
-        fourth: "moveHorizontal 20s ease infinite",
+        second: "moveVertical 20s reverse infinite",
+        third: "moveVertical 20s linear infinite",
+        fourth: "moveHorizontal 20s linear infinite",
         fifth: "moveInCircle 20s ease infinite",
-
         aurora: "aurora 60s linear infinite",
       },
     },
