@@ -79,9 +79,11 @@ const config = {
       },
       keyframes: {
         "horizontal-middle": {
-          "0%": { transform: "translateX(-25%)" },
-          "50%": { transform: "translateX(25%)" },
-          "100%": { transform: "translateX(-25%)" },
+          "0%": { transform: "translateX(-80%)" },
+        },
+
+        "horizontal-middle-reverse": {
+          "0%": { transform: "translateX(80%)" },
         },
         moveHorizontal: {
           "0%": {
@@ -107,13 +109,13 @@ const config = {
         },
         moveVertical: {
           "0%": {
-            transform: "translateY(-50%)",
+            transform: "translateY(-25%)",
           },
           "50%": {
-            transform: "translateY(50%)",
+            transform: "translateY(25%)",
           },
           "100%": {
-            transform: "translateY(-50%)",
+            transform: "translateY(-25%)",
           },
         },
         "border-beam": {
@@ -148,13 +150,15 @@ const config = {
         },
       },
       animation: {
-        "horizontal-middle": "horizontal-middle 15s linear infinite",
+        "horizontal-middle": "horizontal-middle 5s ease forwards",
+        "horizontal-middle-reverse":
+          "horizontal-middle-reverse 5s ease forwards",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 2s linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         first: "moveVertical 10s ease infinite",
-        second: "moveVertical 10s reverse infinite",
+        second: "moveVertical 10s reverse ease forwards",
         third: "moveVertical 10s linear infinite",
         fourth: "moveHorizontal 10s linear infinite",
         fifth: "moveInCircle 10s ease infinite",

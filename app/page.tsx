@@ -5,7 +5,7 @@ import { Aurora } from "@/components/aurora";
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center items-center  antialiased">
+    <div className="min-h-screen max-w-screen  flex flex-col justify-center items-center  antialiased">
       <Aurora></Aurora>
       <LogoTicker></LogoTicker>
       <HeroSection></HeroSection>

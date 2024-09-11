@@ -1,9 +1,9 @@
-import { BackgroundGradientAnimationDemo } from "@/components/gradiant-animation-background";
+import { FeaturesSectionDemo } from "@/components/bento-grid";
 
 export default function Page() {
   return (
     <div>
-      <BackgroundGradientAnimationDemo></BackgroundGradientAnimationDemo>
+      <FeaturesSectionDemo></FeaturesSectionDemo>
     </div>
   );
 }

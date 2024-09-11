@@ -118,10 +118,10 @@ export const BackgroundGradientAnimation = ({
       >
         <div
           className={cn(
-            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--second-color),_0.8)_0,_rgba(var(--second-color),_0)_50%)_no-repeat]`,
-            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-50%-var(--size)/2)] right-[calc(5%-var(--size)/2)]`, // Adjusted top value
+            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--second-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat]`,
+            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-50%-var(--size)/2)] right-[calc(10%-var(--size)/2)]`, // Adjusted to start from the right
             `[transform-origin:calc(50%-400px)]`,
-            `animate-second`,
+            `animate-horizontal-middle-reverse`,
             `opacity-60`,
           )}
         ></div>
@@ -130,15 +130,15 @@ export const BackgroundGradientAnimation = ({
             `absolute [background:radial-gradient(circle_at_center,_rgba(var(--third-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat]`,
             `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-50%-var(--size)/2)] left-[calc(10%-var(--size)/2)]`, // Adjusted top value
             `[transform-origin:calc(50%+400px)]`,
-            `animate-second`,
+            `animate-horizontal-middle`,
             `opacity-60`,
           )}
         ></div>
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,_rgba(var(--fourth-color),_0.8)_0,_rgba(var(--fourth-color),_0)_50%)_no-repeat]`,
-            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(0%-var(--size))] left-[calc(35%-var(--size)/3)]`, // Adjusted top value
-            `animate-horizontal-middle`, // Custom animation to move left and right in the middle
+            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-20%-var(--size))] left-[calc(35%-var(--size)/3)]`, // Adjusted top value
+            `animate-second`,
             `opacity-80`,
           )}
         ></div>
