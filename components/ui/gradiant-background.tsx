@@ -10,11 +10,10 @@ export const BackgroundGradientAnimation = ({
   thirdColor = "244, 119, 28",
   fourthColor = "23, 99, 252",
   pointerColor = "140, 100, 255",
-  size = "125%",
+  size = "150%",
   blendingValue = "hard-light",
   children,
   className,
-  interactive = true,
   containerClassName,
 }: {
   gradientBackgroundStart?: string;
@@ -70,14 +69,6 @@ export const BackgroundGradientAnimation = ({
 
     move();
   }, [tgX, tgY]);
-
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (interactiveRef.current) {
-      const rect = interactiveRef.current.getBoundingClientRect();
-      setTgX(event.clientX - rect.left);
-      setTgY(event.clientY - rect.top);
-    }
-  };
 
   const [isSafari, setIsSafari] = useState(false);
   useEffect(() => {
@@ -137,7 +128,7 @@ export const BackgroundGradientAnimation = ({
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,_rgba(var(--second-color),_0.8)_0,_rgba(var(--fourth-color),_0)_50%)_no-repeat]`,
-            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-20%-var(--size))] left-[calc(35%-var(--size)/3)]`, // Adjusted top value
+            `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-20%-var(--size))] left-[calc(25%-var(--size)/3)]`, // Adjusted top value
             `animate-second`,
             `opacity-80`,
           )}

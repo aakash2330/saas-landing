@@ -150,9 +150,9 @@ const config = {
         },
       },
       animation: {
-        "horizontal-middle": "horizontal-middle 5s ease forwards",
+        "horizontal-middle": "horizontal-middle 2s ease forwards",
         "horizontal-middle-reverse":
-          "horizontal-middle-reverse 5s ease forwards",
+          "horizontal-middle-reverse 2s ease forwards",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 2s linear infinite",
