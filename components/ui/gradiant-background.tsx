@@ -10,7 +10,7 @@ export const BackgroundGradientAnimation = ({
   thirdColor = "244, 119, 28",
   fourthColor = "23, 99, 252",
   pointerColor = "140, 100, 255",
-  size = "80%",
+  size = "100%",
   blendingValue = "hard-light",
   children,
   className,
@@ -118,7 +118,7 @@ export const BackgroundGradientAnimation = ({
       >
         <div
           className={cn(
-            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--second-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat]`,
+            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--third-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat]`,
             `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-50%-var(--size)/2)] right-[calc(10%-var(--size)/2)]`, // Adjusted to start from the right
             `[transform-origin:calc(50%-400px)]`,
             `animate-horizontal-middle-reverse`,
@@ -127,7 +127,7 @@ export const BackgroundGradientAnimation = ({
         ></div>
         <div
           className={cn(
-            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--third-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat]`,
+            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--fourth-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat]`,
             `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-50%-var(--size)/2)] left-[calc(10%-var(--size)/2)]`, // Adjusted top value
             `[transform-origin:calc(50%+400px)]`,
             `animate-horizontal-middle`,
@@ -136,7 +136,7 @@ export const BackgroundGradientAnimation = ({
         ></div>
         <div
           className={cn(
-            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--fourth-color),_0.8)_0,_rgba(var(--fourth-color),_0)_50%)_no-repeat]`,
+            `absolute [background:radial-gradient(circle_at_center,_rgba(var(--second-color),_0.8)_0,_rgba(var(--fourth-color),_0)_50%)_no-repeat]`,
             `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-20%-var(--size))] left-[calc(35%-var(--size)/3)]`, // Adjusted top value
             `animate-second`,
             `opacity-80`,
