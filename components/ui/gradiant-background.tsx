@@ -122,7 +122,7 @@ export const BackgroundGradientAnimation = ({
             `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-50%-var(--size)/2)] right-[calc(10%-var(--size)/2)]`, // Adjusted to start from the right
             `[transform-origin:calc(50%-400px)]`,
             `animate-horizontal-middle-reverse`,
-            `opacity-60`,
+            `opacity-70`,
           )}
         ></div>
         <div
@@ -131,7 +131,7 @@ export const BackgroundGradientAnimation = ({
             `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(-50%-var(--size)/2)] left-[calc(10%-var(--size)/2)]`, // Adjusted top value
             `[transform-origin:calc(50%+400px)]`,
             `animate-horizontal-middle`,
-            `opacity-60`,
+            `opacity-70`,
           )}
         ></div>
         <div
