@@ -62,8 +62,11 @@ export function Aurora() {
               Extract insights from data with AI
             </motion.div>
           </div>
-          <button className="text-white bg-black z-[999] py-2 px-4 rounded-xl transform transition-transform duration-200 hover:scale-105">
-            Upload your Excel file
+          <button className="p-[3px] z-[999] relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] rounded-lg" />
+            <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+              Upload your excel file
+            </div>
           </button>
         </div>
         <div className="size-[15rem] z-[999] flex justify-center items-center">

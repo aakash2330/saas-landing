@@ -4,9 +4,9 @@ import { TimelineDemo } from "@/components/time-line";
 import { UseCasesCaraousal } from "@/components/use-cases-bento-grid";
 import { AccordionDemo } from "@/components/faq-accordion";
 import { BackgroundBeamsDemo } from "@/components/contact-us-beams";
-import HeroSection from "./test/page";
 import { StickyScrollRevealDemo } from "@/components/ui/sticky-scroll-features";
 import { Features } from "@/components/how-it-works";
+import HeroSection from "@/components/hero-section";
 
 export default function Home() {
   return (
@@ -14,9 +14,9 @@ export default function Home() {
       <Aurora></Aurora>
       <HeroSection></HeroSection>
       <LogoTicker></LogoTicker>
+      <TimelineDemo></TimelineDemo>
       <StickyScrollRevealDemo></StickyScrollRevealDemo>
       <Features></Features>
-      <TimelineDemo></TimelineDemo>
       <UseCasesCaraousal></UseCasesCaraousal>
       <AccordionDemo></AccordionDemo>
       <BackgroundBeamsDemo></BackgroundBeamsDemo>

@@ -39,7 +39,7 @@ export function FeatureCard({
   return (
     <div
       key={id}
-      className="relative flex-1 rounded-xl border border-white/30 px-5 py-10 text-center"
+      className="relative w-[30rem]  rounded-xl border border-white/30 px-5 py-10 text-center"
     >
       <motion.div
         ref={border}

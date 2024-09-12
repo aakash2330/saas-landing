@@ -11,38 +11,45 @@ export interface Feature {
 export const featuresList: Feature[] = [
   {
     id: "1",
-    title: "Upload Your Data",
+    title: "User-Friendly Interface",
     description:
-      "Simply upload your Excel file. No need for any additional input from you.",
+      "Our platform is designed to be intuitive and easy to use, so you can get started quickly without any technical expertise.",
     color: "#F4771C",
   },
   {
     id: "2",
-    title: "Automated Analysis",
+    title: "Zero statistical knowledge required",
     description:
-      "Our advanced algorithms handle all the statistical analysis and data processing automatically.",
+      "Our state-of-the-art algorithm understands your data at depth, automatically applies the relevant statistics, and interprets the results for you.",
     color: "#1764FC",
   },
   {
     id: "3",
-    title: "Download Your Report",
+    title: "Save Time and Effort",
     description:
-      "Get a comprehensive report with detailed insights, correlations, statistics, and graphs, all without lifting a finger.",
+      "Don’t waste hours analyzing data in Excel or R. Let us crunch the numbers, plot the graphs, and generate a presentation so you can focus on what matters.",
     color: "#9F1BB5",
+  },
+  {
+    id: "4",
+    title: "Custom Solutions",
+    description:
+      "Tailored solutions to meet the unique needs of your business, ensuring you get the most relevant insights.Reach out to us at info@easyanalysis.ai",
+    color: "green",
   },
 ];
 
 export function Features() {
   return (
-    <div className="bg-black py-[72px] space-y-16 mt-[5rem] text-white sm:py-24">
+    <div className="bg-black py-[72px] space-y-16  text-white sm:py-24">
       <div className="container">
         <h2 className="text-center text-5xl font-bold tracking-tighter sm:text-6xl">
-          How it works ?
+          Why Choose Us ?
         </h2>
         <div className="mx-auto max-w-xl">
           <p className="mt-5 text-center text-xl text-white/70">Placeholder</p>
         </div>
-        <div className="mt-16 flex flex-col gap-4 sm:flex-row">
+        <div className="mt-16 grid grid-cols-2 gap-4 sm:flex-row">
           {featuresList.map((feature) => (
             <FeatureCard key={feature.id} feature={feature} />
           ))}
