@@ -1,11 +1,8 @@
 "use client";
 
 import { BorderBeam } from "@/components/magicui/border-beam";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { useInView } from "framer-motion";
-import { ChevronRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
 import heroImage from "../../public/assets/Hero.png";
 
@@ -15,51 +12,59 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative mx-auto mt-32 px-6 md:px-8 max-w-[80rem] text-center"
+      className="relative mx-auto  px-6 md:px-8 max-w-[80rem] text-center"
     >
-      <div className="max-w-2xl mx-auto p-4">
-        <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
-          Intuitive Interface
-        </h1>
-      </div>
-      <p className=" mb-12 text-balance text-gray-400 text-lg md:text-xl tracking-tight translate-y-[-1rem] animate-fade-in [--animation-delay:400ms]">
-        Celebrate the joy of accomplishment with an app designed to track your
-        progress, motivate your efforts, and celebrate your successes, one task
-        at a time.
-      </p>
-      <div className="flex justify-center items-center">
-        <Link href="/signup" className="">
-          <HoverBorderGradient
-            containerClassName="rounded-full"
-            as="button"
-            className="flex items-center space-x-2 bg-white dark:bg-black text-black dark:text-white"
-          >
-            Get Started
-            <ChevronRight className="ml-1 transition-all group-hover:translate-x-1 duration-300 ease-out size-4" />
-          </HoverBorderGradient>
-        </Link>
-      </div>
-      <br />
       <div
-        className={`rounded-xl border border-black bg-white  before:absolute before:bottom-1/2 before:left-0 before:top-0 before:h-full before:w-full before:opacity-0 before:[filter:blur(180px)] before:[background-image:linear-gradient(to_bottom,var(--color-one),var(--color-one),transparent_40%)] ${
-          inView ? "before:animate-image-glow" : ""
-        }`}
+        ref={ref}
+        className="relative after:[background:linear-gradient(to_top,hsl(var(--background))_2%,transparent)] after:z-50 after:absolute after:inset-0   animate-fade-up [--animation-delay:400ms] [perspective:2000px]"
       >
-        <BorderBeam
-          size={999}
-          duration={12}
-          delay={11}
-          colorFrom="var(--color-two)"
-          colorTo="var(--color-three)"
-        />
+        <div
+          className={`rounded-xl border border-black bg-white  before:absolute before:bottom-1/2 before:left-0 before:top-0 before:h-full before:w-full before:opacity-0 before:[filter:blur(180px)] before:[background-image:linear-gradient(to_bottom,var(--color-one),var(--color-one),transparent_40%)] ${
+            inView ? "before:animate-image-glow" : ""
+          }`}
+        >
+          <BorderBeam
+            size={999}
+            duration={12}
+            delay={11}
+            colorFrom="var(--color-two)"
+            colorTo="var(--color-three)"
+          />
 
-        <Image
-          width={1000}
-          height={1000}
-          src={heroImage}
-          alt="Hero Image"
-          className="block  relative dark:hidden border rounded-[inherit] w-full h-full object-contain"
-        />
+          <Image
+            width={1000}
+            height={1000}
+            src={heroImage}
+            alt="Hero Image"
+            className="block  relative dark:hidden border rounded-[inherit] w-full h-full object-contain"
+          />
+        </div>
+      </div>
+
+      <div className="mx-auto flex max-w-screen-xl flex-col gap-8 px-4 py-14 md:px-8">
+        <div className="mx-auto max-w-5xl text-center">
+          <h2 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">
+            Dont waste Hours analysing data .
+          </h2>
+
+          <p className="mt-6 text-xl leading-8 text-white">
+            Let us crunch the <strong>numbers</strong> , plot the graphs and
+            generate a presentation <br />
+            so that you can focus on what truely matters{" "}
+          </p>
+        </div>
+
+        <div className="flex justify-center items-center">
+          <button
+            className="text-white z-[999]  py-2 px-4 rounded-xl transform transition-transform duration-200 hover:scale-105"
+            style={{
+              background:
+                "linear-gradient(130deg, #1764FC 0%, #9F1BB5 50%, #F4771C 100%)",
+            }}
+          >
+            Upload your Excel file
+          </button>
+        </div>
       </div>
     </section>
   );

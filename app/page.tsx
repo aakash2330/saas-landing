@@ -6,6 +6,7 @@ import { AccordionDemo } from "@/components/faq-accordion";
 import { BackgroundBeamsDemo } from "@/components/contact-us-beams";
 import HeroSection from "./test/page";
 import { StickyScrollRevealDemo } from "@/components/ui/sticky-scroll-features";
+import { Features } from "@/components/how-it-works";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSection></HeroSection>
       <LogoTicker></LogoTicker>
       <StickyScrollRevealDemo></StickyScrollRevealDemo>
+      <Features></Features>
       <TimelineDemo></TimelineDemo>
       <UseCasesCaraousal></UseCasesCaraousal>
       <AccordionDemo></AccordionDemo>

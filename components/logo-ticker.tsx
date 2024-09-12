@@ -49,7 +49,7 @@ export function LogoTicker() {
   const { isMobile } = useMediaQuery();
 
   return (
-    <div className="bg-black py-24 mt-[10rem] text-white">
+    <div className="bg-black py-24 mt-[5rem] text-white">
       <div className="container">
         <h2 className="text-center text-xl text-white/50">
           Trusted by the world’s most innovative teams

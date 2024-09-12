@@ -60,9 +60,9 @@ const content = [
 export function StickyScrollRevealDemo() {
   return (
     <div className="mt-[10rem] w-full">
-      <div className="max-w-2xl mx-auto p-4">
-        <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
-        Features
+      <div className="max-w-2xl mx-auto mb-3 p-4">
+        <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-white bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
+          Features
         </h1>
       </div>
       <StickyScroll content={content} />
