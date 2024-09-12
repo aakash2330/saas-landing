@@ -6,6 +6,7 @@ import img1 from "../../public/assets/Image2.png";
 import img3 from "../../public/assets/Image3.png";
 import img4 from "../../public/assets/Image4.png";
 import { cn } from "@/lib/utils";
+import { HeroTitle } from "../hero-title";
 
 const content = [
   {
@@ -33,19 +34,37 @@ export function StickyScrollRevealDemo() {
   return (
     <div className=" w-full px-[15%] pt-[10%]  flex justify-center items-center flex-col">
       <div className="max-w-2xl mx-auto mb-3 p-4">
-        <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-white bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
-          How it works
-        </h1>
+        <HeroTitle title="How it works ?"></HeroTitle>
       </div>
       <div className="w-full">
         {content.map((item, index) => {
-          return index % 2 == 0 ? (
+          return index % 2 !== 0 ? (
             <div key={index} className="grid grid-cols-8">
               <div className="col-span-3  flex flex-col justify-center items-center">
-                <div className="text-2xl">{item.title}</div>
+                <div style={{ color: colors[index] }} className="text-2xl">
+                  {item.title}
+                </div>
                 <br />
                 <div className="font-light text-center">{item.description}</div>
               </div>
+              <div className=" col-span-2 flex flex-col justify-center items-center">
+                <div className="h-full w-[1px]  bg-white"></div>
+                <div
+                  style={{ backgroundColor: colors[index] }}
+                  className={cn(
+                    `inline-flex min-h-14 min-w-14  text-white rounded-full items-center justify-center font-bold `,
+                  )}
+                >
+                  {index + 1}
+                </div>
+                <div className="h-full w-[1px]  bg-white"></div>
+                <div className=" col-span-2 flex justify-center items-center"></div>
+              </div>
+              <div className="col-span-3 h-[20rem] flex justify-center items-center"></div>
+            </div>
+          ) : (
+            <div key={index} className="grid grid-cols-8">
+              <div className="col-span-3  flex  justify-center items-center"></div>
               <div className=" col-span-2 flex flex-col justify-center items-center">
                 <div
                   className={`h-full w-[1px] bg-${index == 0 ? "black" : "white"}`}
@@ -53,43 +72,42 @@ export function StickyScrollRevealDemo() {
                 <div
                   style={{ backgroundColor: colors[index] }}
                   className={cn(
-                    `inline-flex min-h-14 min-w-14  rounded-full items-center justify-center   text-black`,
+                    `inline-flex min-h-14 text-white min-w-14 rounded-full items-center justify-center`,
                   )}
                 >
                   {index + 1}
                 </div>
-                <div className=" col-span-2 flex justify-center items-center"></div>
+
                 <div
                   className={`h-full w-[1px] bg-${index !== 0 ? "black" : "white"}`}
                 ></div>
               </div>
-              <div className="col-span-3 h-[20rem] flex justify-center items-center">
-              </div>
-            </div>
-          ) : (
-            <div key={index} className="grid grid-cols-8">
-              <div className="col-span-3  flex  justify-center items-center">
-              </div>
-              <div className=" col-span-2 flex flex-col justify-center items-center">
-                <div className="h-full w-[1px]  bg-white"></div>
-                <div
-                  style={{ backgroundColor: colors[index] }}
-                  className={cn(
-                    `inline-flex min-h-14 min-w-14 rounded-full items-center justify-center   text-black`,
-                  )}
-                >
-                  {index + 1}
-                </div>
-                <div className="h-full w-[1px] bg-white"></div>
-              </div>
               <div className="col-span-3  flex flex-col justify-center items-center">
-                <div className="text-2xl">{item.title}</div>
+                <div style={{ color: colors[index] }} className="text-2xl">
+                  {item.title}
+                </div>
                 <br />
                 <div className="font-light text-center">{item.description}</div>
               </div>
             </div>
           );
         })}
+      </div>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className="flex justify-center items-center">
+        <button
+          className="text-white z-[999]  py-2 px-4 rounded-xl transform transition-transform duration-200 hover:scale-105"
+          style={{
+            background:
+              "linear-gradient(130deg, #1764FC 0%, #9F1BB5 50%, #F4771C 100%)",
+          }}
+        >
+          Get started for free
+        </button>
       </div>
     </div>
   );

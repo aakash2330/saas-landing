@@ -3,13 +3,14 @@ import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { Feature } from "../how-it-works";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface FeatureCardProps {
   feature: Feature;
 }
 
 export function FeatureCard({
-  feature: { description, id, title, color },
+  feature: { description, id, title, color, icon },
 }: FeatureCardProps) {
   const offsetX = useMotionValue(-100);
   const offsetY = useMotionValue(-100);
@@ -49,16 +50,19 @@ export function FeatureCard({
           maskImage,
         }}
       />
-      <div
-        style={{ backgroundColor: color }}
-        className={cn(
-          `inline-flex h-14 w-14 rounded-full items-center justify-center   text-black`,
-        )}
-      >
-        {id}
+      <div className="flex justify-center items-center">
+        <Image
+          src={icon}
+          alt=""
+          height={50}
+          width={50}
+          className="object-cover"
+        ></Image>
       </div>
-      <h3 className="mt-6 font-bold">{title}</h3>
-      <p className="mt-2 text-white/70">{description}</p>
+      <h3 className="mt-6 font-bold" style={{ color: color }}>
+        {title}
+      </h3>
+      <p className="mt-2 text-white/90">{description}</p>
     </div>
   );
 }

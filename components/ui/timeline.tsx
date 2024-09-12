@@ -1,6 +1,7 @@
 "use client";
 import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { HeroTitle } from "../hero-title";
 
 interface TimelineEntry {
   title: string;
@@ -29,13 +30,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
+      id="startFeatures"
       className="w-full bg-black mt-[5rem] font-sans md:px-10"
       ref={containerRef}
     >
       <div className="max-w-2xl mx-auto ">
-        <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-white bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
-          Features
-        </h1>
+        <HeroTitle title="Features"></HeroTitle>
       </div>
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
@@ -44,7 +44,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-black flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-800 border border-neutral-700 p-2" />
               </div>
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-white ">
+              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-transparent ">
                 {item.title}
               </h3>
             </div>

@@ -6,6 +6,7 @@ import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { BarChartExample } from "./bar-chart";
 import { BackgroundGradientAnimation } from "./ui/gradiant-background";
+import { Navbar } from "./navbar";
 
 const DynamicLineDrawingAnimation = dynamic(
   () => import("../components/graph-animation"),
@@ -38,6 +39,7 @@ export function Aurora() {
 
   return (
     <BackgroundGradientAnimation>
+      <Navbar></Navbar>
       <div className="flex mt-[10%] gap-5  p-20  justify-center items-center">
         <div className="z-[999]">
           <BarChartExample></BarChartExample>
@@ -51,19 +53,20 @@ export function Aurora() {
               exit={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 1 }}
             >
-              EasyAnalysis.ai
+              Get insights from your data
             </motion.div>
             <motion.div
-              className="font-extralight z-[999] text-white text-base md:text-4xl dark:text-neutral-200 py-4"
+              className="font-extralight text-center z-[999] text-white text-base md:text-2xl dark:text-neutral-200 py-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 2, duration: 1 }}
             >
-              Extract insights from data with AI
+              Get a free easy-to-interpret report with key insights including
+              correlations, statistics, and graphs.
             </motion.div>
           </div>
           <button className="p-[3px] z-[999] relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] rounded-lg" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] rounded-[6px]" />
             <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
               Upload your excel file
             </div>

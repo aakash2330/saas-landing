@@ -1,6 +1,20 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Gaegu } from "@next/font/google";
+import { JetBrains_Mono } from "@next/font/google";
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-jetBrainsMono",
+});
+
+const gaegu = Gaegu({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-gaegu",
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${gaegu.variable} ${jetBrainsMono.variable}`}
       >
         {children}
       </body>

@@ -37,6 +37,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        gaegu: ["var(--font-gaegu)", "sans-serif"],
+        jetBrainsMono: ["var(--font-jetBrainsMono)", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

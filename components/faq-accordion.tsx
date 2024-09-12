@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { HeroTitle } from "./hero-title";
 
 const data = [
   {
@@ -55,9 +56,7 @@ export function AccordionDemo() {
     <div className="flex flex-col gap-5 justify-center items-center mt-[10rem] px-[15%] w-full">
       <div className="w-full text-center h-full">
         <div className="max-w-2xl mx-auto p-4">
-          <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-white bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
-            Frequently Asked Questions ?
-          </h1>
+          <HeroTitle title=" Frequently Asked Questions ? "></HeroTitle>
         </div>
       </div>
       <Accordion type="single" collapsible className="w-full">

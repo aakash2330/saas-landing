@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import heroImage from "../public/assets/Hero.png";
+import heroImage from "../public/assets/Assets/Slide_purple.png";
 
 export default function HeroSection() {
   const ref = useRef(null);
@@ -16,7 +16,7 @@ export default function HeroSection() {
         className="relative -translate-y-32 after:[background:linear-gradient(to_top,hsl(var(--background))_2%,transparent)] after:z-50 after:absolute after:inset-0   animate-fade-up [--animation-delay:400ms] [perspective:2000px]"
       >
         <div
-          className={`rounded-xl border border-black bg-white  before:absolute before:bottom-1/2 before:left-0 before:top-0 before:h-full before:w-full before:opacity-0 before:[filter:blur(180px)] before:[background-image:linear-gradient(to_bottom,var(--color-one),var(--color-one),transparent_40%)] `}
+          className={`rounded-xl  before:absolute before:bottom-1/2 before:left-0 before:top-0 before:h-full before:w-full before:opacity-0 before:[filter:blur(180px)] before:[background-image:linear-gradient(to_bottom,var(--color-one),var(--color-one),transparent_40%)] `}
         >
           <Image
             width={800}

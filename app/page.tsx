@@ -7,6 +7,8 @@ import { BackgroundBeamsDemo } from "@/components/contact-us-beams";
 import { StickyScrollRevealDemo } from "@/components/ui/sticky-scroll-features";
 import { Features } from "@/components/how-it-works";
 import HeroSection from "@/components/hero-section";
+import { CareersSection } from "@/components/careers";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -20,6 +22,7 @@ export default function Home() {
       <UseCasesCaraousal></UseCasesCaraousal>
       <AccordionDemo></AccordionDemo>
       <BackgroundBeamsDemo></BackgroundBeamsDemo>
+      <CareersSection></CareersSection>
     </div>
   );
 }

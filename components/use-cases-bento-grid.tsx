@@ -7,6 +7,7 @@ import customerFeedback from "../public/assets/new/Tile_Customer_feedback.png";
 import businessAnalytics from "../public/assets/new/Tile_Business_analytics.png";
 import financialAnalysis from "../public/assets/new/Tile_Financial_Analysis.png";
 import healthcareAnalysis from "../public/assets/new/Tile_Healthcare_analysis.png";
+import { HeroTitle } from "./hero-title";
 
 export function UseCasesCaraousal() {
   const cards = data.map((card, index) => (
@@ -15,11 +16,9 @@ export function UseCasesCaraousal() {
   ));
 
   return (
-    <div className="w-full text-center h-full mt-[12rem]">
+    <div className="w-full text-center h-full mt-[7rem]">
       <div className="max-w-2xl mx-auto p-4">
-        <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-white bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
-          Use cases
-        </h1>
+      <HeroTitle title="Use cases"></HeroTitle>
       </div>
       <Carousel items={cards} />
     </div>
