@@ -50,8 +50,9 @@ export function FeatureCard({
         }}
       />
       <div
+        style={{ backgroundColor: color }}
         className={cn(
-          `inline-flex h-14 w-14 items-center justify-center rounded-lg bg-[${color}] text-black`,
+          `inline-flex h-14 w-14 rounded-full items-center justify-center   text-black`,
         )}
       >
         {id}
