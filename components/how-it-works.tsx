@@ -20,7 +20,7 @@ export const featuresList: Feature[] = [
     title: "Zero statistical knowledge required",
     description:
       "Our state-of-the-art algorithm understands your data at depth, automatically applies the relevant statistics, and interprets the results for you.",
-    color: "#9F1BB5",
+    color: "#C502C9",
     icon: purple,
   },
   {
@@ -28,7 +28,7 @@ export const featuresList: Feature[] = [
     title: "User-Friendly Interface",
     description:
       "Our platform is designed to be intuitive and easy to use, so you can get started quickly without any technical expertise.",
-    color: "#F4771C",
+    color: "#FECA13",
     icon: yellow,
   },
   {
@@ -36,7 +36,7 @@ export const featuresList: Feature[] = [
     title: "Save Time and Effort",
     description:
       "Don’t waste hours analyzing data in Excel or R. Let us crunch the numbers, plot the graphs, and generate a presentation so you can focus on what matters.",
-    color: "green",
+    color: "#25B600",
     icon: green,
   },
 
@@ -45,7 +45,7 @@ export const featuresList: Feature[] = [
     title: "Custom Solutions",
     description:
       "Tailored solutions to meet the unique needs of your business, ensuring you get the most relevant insights.Reach out to us at info@easyanalysis.ai",
-    color: "#1764FC",
+    color: "#2589FE",
     icon: blue,
   },
 ];

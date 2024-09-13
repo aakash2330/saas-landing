@@ -11,7 +11,7 @@ export function TimelineDemo() {
       title: "Unstructured Text Analysis",
       content: (
         <div>
-          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className=" font-light mb-8">
             For the first time ever, our product can leverage AI to deeply
             analyse unstructured text data at scale .
           </p>
@@ -32,7 +32,7 @@ export function TimelineDemo() {
       title: "Advanced Hypothesis",
       content: (
         <div>
-          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className=" font-light mb-8">
             Based on your data, we will pick the most relevant statistical
             method and test if 2 columns are correlated.
             <br />
@@ -55,11 +55,11 @@ export function TimelineDemo() {
       title: "Custom Reports",
       content: (
         <div>
-          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className=" font-light mb-8">
             {` We can even conduct custom statistical analysis based on your use cases & Can generate fully bespoke reports with your company's branding to seamlessly fit with your workflows .
 `}
-          <br/>
-          Reach out to info@easyanalysis.ai
+            <br />
+            Reach out to info@easyanalysis.ai
           </p>
           <div className="grid grid-cols-4 gap-4">
             <Image

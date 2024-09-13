@@ -59,10 +59,10 @@ export function FeatureCard({
           className="object-cover"
         ></Image>
       </div>
-      <h3 className="mt-6 font-bold" style={{ color: color }}>
+      <h3 className="mt-6 text-xl font-bold" style={{ color: color }}>
         {title}
       </h3>
-      <p className="mt-2 text-white/90">{description}</p>
+      <p className="mt-2 font-light text-white/90">{description}</p>
     </div>
   );
 }

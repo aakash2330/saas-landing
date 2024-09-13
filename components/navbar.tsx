@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Button } from "./ui/button";
 export function Navbar() {
   function scrollTo(id: string) {
@@ -12,7 +12,9 @@ export function Navbar() {
         <span className="font-gaegu text-[#94C23E]">a</span>
         <span className="font-gaegu text-[#E075CF]">s</span>
         <span className="font-gaegu text-[#FEA914]">y</span>
-        <span className="font-jetBrainsMono text-4xl text-white">Analysis.Ai</span>
+        <span className="font-jetBrainsMono text-4xl text-white">
+          Analysis.Ai
+        </span>
       </div>
       <div className="flex gap-10 justify-center items-center">
         <div

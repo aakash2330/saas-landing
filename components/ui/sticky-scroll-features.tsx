@@ -7,6 +7,7 @@ import img3 from "../../public/assets/Image3.png";
 import img4 from "../../public/assets/Image4.png";
 import { cn } from "@/lib/utils";
 import { HeroTitle } from "../hero-title";
+import { color } from "snapsvg";
 
 const content = [
   {
@@ -38,15 +39,40 @@ export function StickyScrollRevealDemo() {
       </div>
       <div className="w-full">
         {content.map((item, index) => {
-          return index % 2 !== 0 ? (
+          return index % 2 == 0 ? (
             <div key={index} className="grid grid-cols-8">
               <div className="col-span-3  flex flex-col justify-center items-center">
-                <div style={{ color: colors[index] }} className="text-2xl">
+                <div
+                  style={{ color: colors[index] }}
+                  className="text-2xl text-right w-full"
+                >
                   {item.title}
                 </div>
                 <br />
-                <div className="font-light text-center">{item.description}</div>
+                <div className="font-light text-right">{item.description}</div>
               </div>
+              <div className=" col-span-2 flex flex-col justify-center items-center">
+                <div
+                  className={`h-full w-[1px] bg-${index == 0 ? "black" : "white"}`}
+                ></div>
+                <div
+                  style={{ backgroundColor: colors[index] }}
+                  className={cn(
+                    `inline-flex min-h-14 min-w-14  text-white rounded-full items-center justify-center font-bold `,
+                  )}
+                >
+                  {index + 1}
+                </div>
+                <div className=" col-span-2 flex justify-center items-center"></div>
+                <div
+                  className={`h-full w-[1px] bg-${index !== 0 ? "black" : "white"}`}
+                ></div>
+              </div>
+              <div className="col-span-3 h-[20rem] flex justify-center items-center"></div>
+            </div>
+          ) : (
+            <div key={index} className="grid grid-cols-8">
+              <div className="col-span-3  flex  justify-center items-center"></div>
               <div className=" col-span-2 flex flex-col justify-center items-center">
                 <div className="h-full w-[1px]  bg-white"></div>
                 <div
@@ -57,37 +83,17 @@ export function StickyScrollRevealDemo() {
                 >
                   {index + 1}
                 </div>
-                <div className="h-full w-[1px]  bg-white"></div>
-                <div className=" col-span-2 flex justify-center items-center"></div>
-              </div>
-              <div className="col-span-3 h-[20rem] flex justify-center items-center"></div>
-            </div>
-          ) : (
-            <div key={index} className="grid grid-cols-8">
-              <div className="col-span-3  flex  justify-center items-center"></div>
-              <div className=" col-span-2 flex flex-col justify-center items-center">
-                <div
-                  className={`h-full w-[1px] bg-${index == 0 ? "black" : "white"}`}
-                ></div>
-                <div
-                  style={{ backgroundColor: colors[index] }}
-                  className={cn(
-                    `inline-flex min-h-14 text-white min-w-14 rounded-full items-center justify-center`,
-                  )}
-                >
-                  {index + 1}
-                </div>
-
-                <div
-                  className={`h-full w-[1px] bg-${index !== 0 ? "black" : "white"}`}
-                ></div>
+                <div className="h-full w-[1px] bg-white"></div>
               </div>
               <div className="col-span-3  flex flex-col justify-center items-center">
-                <div style={{ color: colors[index] }} className="text-2xl">
+                <div
+                  style={{ color: colors[index] }}
+                  className="text-2xl text-left w-full"
+                >
                   {item.title}
                 </div>
                 <br />
-                <div className="font-light text-center">{item.description}</div>
+                <div className="font-light  text-left">{item.description}</div>
               </div>
             </div>
           );
