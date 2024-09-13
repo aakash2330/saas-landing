@@ -22,7 +22,7 @@ export function TimelineDemo() {
         <div>
           <p className=" font-light mb-8">
             For the first time ever, our product can leverage AI to deeply
-            analyse unstructured text data at scale .
+            analyse unstructured text data at scale.
           </p>
           <div className="grid grid-cols-4 gap-4">
             <Image
@@ -83,7 +83,7 @@ export function TimelineDemo() {
       content: (
         <div>
           <p className=" font-light mb-8">
-            {` We can even conduct custom statistical analysis based on your use cases & Can generate fully bespoke reports with your company's branding to seamlessly fit with your workflows .
+            {` We can even conduct custom statistical analysis based on your use cases & Can generate fully bespoke reports with your company's branding to seamlessly fit with your workflows.
 `}
             <br />
             Reach out to info@easyanalysis.ai

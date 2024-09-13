@@ -62,7 +62,7 @@ export function Aurora() {
               transition={{ delay: 2, duration: 1 }}
             >
               Get a free easy-to-interpret report with key insights including
-              correlations, statistics, and graphs
+              correlations, statistics and graphs
             </motion.div>
           </div>
           <button className="p-[3px] z-[999] relative">

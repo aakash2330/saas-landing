@@ -11,11 +11,11 @@ export function Footer() {
           <div>Contact us: info@easyanalysis.ai</div>
           <div>All rights reserved. Easyanalysis.ai 2025</div>
 
-          <div className="flex space-x-1 text-4xl justify-center items-center">
-            <span className="font-gaegu text-[#0EADCF]">E</span>
+          <div className="flex text-4xl justify-center items-center">
+            <span className="font-gaegu text-[#E075CF]">E</span>
             <span className="font-gaegu text-[#94C23E]">a</span>
-            <span className="font-gaegu text-[#E075CF]">s</span>
-            <span className="font-gaegu text-[#FEA914]">y</span>
+            <span className="font-gaegu text-[#FEA914]">s</span>
+            <span className="font-gaegu text-[#0EADCF]">y</span>
             <span className="font-jetBrainsMono text-[1.5rem] text-white">
               Analysis.Ai
             </span>

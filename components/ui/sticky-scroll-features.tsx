@@ -25,7 +25,7 @@ const content = [
   {
     title: "Download Your Report",
     description:
-      "Get a comprehensive report with detailed insights, correlations, statistics, and graphs, all without lifting a finger.",
+      "Get a comprehensive report with detailed insights, correlations, statistics, and graphs all without lifting a finger.",
     content: img3,
   },
 ];

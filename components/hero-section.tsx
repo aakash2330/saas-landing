@@ -35,10 +35,10 @@ export default function HeroSection() {
           </h2>
 
           <p className="mt-6 text-xl leading-8 text-white">
-            Let us crunch the <strong>numbers</strong> , plot the{" "}
+            Let us crunch the <strong>numbers</strong>, plot the{" "}
             <strong>graphs</strong> and generate a <strong>presentation</strong>{" "}
             <br />
-            so that you can focus on what truely matters{" "}
+            so that you can focus on what truely matters
           </p>
         </div>
 

@@ -44,7 +44,7 @@ export const featuresList: Feature[] = [
     id: "4",
     title: "Custom Solutions",
     description:
-      "Tailored solutions to meet the unique needs of your business, ensuring you get the most relevant insights.Reach out to us at info@easyanalysis.ai",
+      "Tailored solutions to meet the unique needs of your business, ensuring you get the most relevant insights. Reach out to us at info@easyanalysis.ai",
     color: "#2589FE",
     icon: blue,
   },
