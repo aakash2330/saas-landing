@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { CircleDot  } from "lucide-react";
+import { CircleDot } from "lucide-react";
 import { Footer } from "./footer";
 import { HeroTitle } from "./hero-title";
 
@@ -14,8 +14,7 @@ export function CareersSection() {
         <HeroTitle title="Careers"></HeroTitle>
         <p className="text-white mt-8 text-center max-w-lg mx-auto my-2  flex justify-center  w-full  gap-2 relative z-10">
           <CircleDot></CircleDot>
-          We are always looking for ways to improve our products and services.
-          Contact us and let us know how we can help you.
+          Front End SDE | - Sept start - applications closed
         </p>
       </div>
 

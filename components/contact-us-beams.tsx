@@ -16,10 +16,6 @@ export function BackgroundBeamsDemo() {
         </p>
       </div>
 
-      <div className="flex justify-center items-center gap-2">
-        <MailIcon></MailIcon>
-        <div className="text-neutral-300 text-lg"> info@easyanalysis.ai</div>
-      </div>
     </div>
   );
 }
