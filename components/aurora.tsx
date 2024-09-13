@@ -40,7 +40,7 @@ export function Aurora() {
   return (
     <BackgroundGradientAnimation>
       <Navbar></Navbar>
-      <div className="flex mt-[10%] gap-5  p-20  justify-center items-center">
+      <div className="flex mt-[10%] p-20 justify-center items-center">
         <div className="z-[999]">
           <BarChartExample></BarChartExample>
         </div>
@@ -72,7 +72,7 @@ export function Aurora() {
             </div>
           </button>
         </div>
-        <div className="size-[15rem] -translate-x-[5rem] flex justify-center items-center">
+        <div className="size-[15rem] -translate-y-10 flex justify-center items-center">
           <DynamicLineDrawingAnimation></DynamicLineDrawingAnimation>
         </div>
       </div>
