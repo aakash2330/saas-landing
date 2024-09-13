@@ -33,7 +33,7 @@ const content = [
 export const colors = ["#F4771C", "#1764FC", "#9F1BB5"];
 export function StickyScrollRevealDemo() {
   return (
-    <div className=" w-full px-[15%] pt-[7%]  flex justify-center items-center flex-col">
+    <div className=" w-full px-[15%] pt-[2%]  flex justify-center items-center flex-col">
       <div className="max-w-2xl translate-y-14 mx-auto  p-4">
         <HeroTitle title="How it works ?"></HeroTitle>
       </div>
@@ -100,7 +100,6 @@ export function StickyScrollRevealDemo() {
         })}
       </div>
 
-      <br />
       <br />
       <br />
       <br />
