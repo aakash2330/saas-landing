@@ -9,7 +9,7 @@ const LineDrawingAnimation = () => {
 
   useEffect(() => {
     const prices = [
-      -100, -95, -30, -65, -35, -215, -95, -70, -115, -100, -20, -200, -170,
+      -100, -95, 0, -65, -35, -215, -95, -70, -115, -100, -20, -200, -170,
     ];
 
     const draw = () => {
@@ -94,7 +94,6 @@ const LineDrawingAnimation = () => {
         xShape.attr({
           stroke: "white",
           "stroke-width": 2,
-
           opacity: 0 + 0.1 * i,
           id: `myCirc${i}`,
           class: "breakpoint",
