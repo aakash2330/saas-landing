@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import heroImage from "../public/assets/Assets/Slide_purple.png";
+import heroImage from "../public/Hero_new.png";
 
 export default function HeroSection() {
   const ref = useRef(null);
