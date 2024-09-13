@@ -40,13 +40,6 @@ export function FeaturesSectionDemo() {
       className:
         "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
     },
-    {
-      title: "placeholder",
-      description:
-        "placeholder text placeholder text placeholder text placeholder text placeholder text",
-      skeleton: <SkeletonFour />,
-      className: "col-span-1 lg:col-span-3 border-b lg:border-none",
-    },
   ];
   return (
     <div className="relative z-20   max-w-7xl ">
