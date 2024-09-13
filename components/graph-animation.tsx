@@ -9,7 +9,7 @@ const LineDrawingAnimation = () => {
 
   useEffect(() => {
     const prices = [
-      0, -95, -30, -65, -35, -215, -95, -70, -115, -100, -20, -200, -170,
+      -100, -95, -30, -65, -35, -215, -95, -70, -115, -100, -20, -200, -170,
     ];
 
     const draw = () => {
@@ -53,15 +53,6 @@ const LineDrawingAnimation = () => {
         point.prevY = prevY;
 
         //@ts-expect-error - ignore
-        if (point.prevX === 0 || point.prevY === 0) {
-          //@ts-expect-error - ignore
-          point.prevX = 15;
-
-          //@ts-expect-error - ignore
-          point.prevY = chartH - 15;
-        }
-
-        //@ts-expect-error - ignore
         points[i] = `M${point.prevX},${point.prevY} L${point.x},${point.y}`;
 
         //@ts-expect-error - ignore
@@ -80,7 +71,9 @@ const LineDrawingAnimation = () => {
           "stroke-dashoffset": len,
           stroke: "white",
           "stroke-linecap": "round",
+          "z-index": 0,
           "stroke-width": 1,
+          opacity: 0 + 0.1 * i,
           "stroke-linejoin": "round",
           id: `myLine${i}`,
           class: "line",
@@ -101,6 +94,8 @@ const LineDrawingAnimation = () => {
         xShape.attr({
           stroke: "white",
           "stroke-width": 2,
+
+          opacity: 0 + 0.1 * i,
           id: `myCirc${i}`,
           class: "breakpoint",
         });
@@ -163,7 +158,7 @@ const LineDrawingAnimation = () => {
   return (
     <>
       <div>
-        <svg id="svg" ref={svgRef} className="h-[20rem] w-[20rem] "></svg>
+        <svg id="svg" ref={svgRef} className="min-h-[20rem]  w-[20rem] "></svg>
       </div>
     </>
   );

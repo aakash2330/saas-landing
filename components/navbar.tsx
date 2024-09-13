@@ -12,7 +12,7 @@ export function Navbar() {
         <span className="font-gaegu text-[#94C23E]">a</span>
         <span className="font-gaegu text-[#FEA914]">s</span>
         <span className="font-gaegu text-[#0EADCF]">y</span>
-        <span className="font-jetBrainsMono text-[1.875rem] text-white">
+        <span className="font-jetBrainsMono text-[1.775rem] text-white">
           Analysis.Ai
         </span>
       </div>

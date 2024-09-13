@@ -16,7 +16,7 @@ export function Footer() {
             <span className="font-gaegu text-[#94C23E]">a</span>
             <span className="font-gaegu text-[#FEA914]">s</span>
             <span className="font-gaegu text-[#0EADCF]">y</span>
-            <span className="font-jetBrainsMono text-[1.5rem] text-white">
+            <span className="font-jetBrainsMono text-[1.35rem] text-white">
               Analysis.Ai
             </span>
           </div>

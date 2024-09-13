@@ -72,7 +72,7 @@ export function Aurora() {
             </div>
           </button>
         </div>
-        <div className="size-[15rem] z-[999] flex justify-center items-center">
+        <div className="size-[15rem] -translate-x-[5rem] flex justify-center items-center">
           <DynamicLineDrawingAnimation></DynamicLineDrawingAnimation>
         </div>
       </div>
