@@ -8,7 +8,16 @@ import customReports from "../public/assets/new/Custom_reports.png";
 export function TimelineDemo() {
   const data = [
     {
-      title: "Unstructured Text Analysis",
+      title: (
+        <div>
+          <span className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-transparent ">
+            Unstructured
+          </span>
+          <span className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-white ">
+            Text Analysis
+          </span>
+        </div>
+      ),
       content: (
         <div>
           <p className=" font-light mb-8">
@@ -29,7 +38,16 @@ export function TimelineDemo() {
     },
 
     {
-      title: "Advanced Hypothesis",
+      title: (
+        <div>
+          <span className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-white ">
+            Advanced
+          </span>
+          <span className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-transparent ">
+            Hypothesis Tests
+          </span>
+        </div>
+      ),
       content: (
         <div>
           <p className=" font-light mb-8">
@@ -52,7 +70,16 @@ export function TimelineDemo() {
       ),
     },
     {
-      title: "Custom Reports",
+      title: (
+        <div>
+          <span className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-transparent ">
+            Custom
+          </span>
+          <span className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-white ">
+            Reports
+          </span>
+        </div>
+      ),
       content: (
         <div>
           <p className=" font-light mb-8">
