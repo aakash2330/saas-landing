@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import { CircleDot, MailIcon } from "lucide-react";
+import { CircleDot  } from "lucide-react";
 import { Footer } from "./footer";
+import { HeroTitle } from "./hero-title";
 
 export function CareersSection() {
   return (
@@ -10,10 +11,8 @@ export function CareersSection() {
       className="h-full w-full rounded-md mt-[15rem]  relative flex flex-col items-center justify-center antialiased"
     >
       <div className="max-w-2xl mx-auto p-4">
-        <h1 className="relative z-10 text-lg md:text-7xl text-center font-sans font-bold">
-          Careers
-        </h1>
-        <p className="text-white text-center max-w-lg mx-auto my-2  flex justify-center  w-full  gap-2 relative z-10">
+        <HeroTitle title="Careers"></HeroTitle>
+        <p className="text-white mt-8 text-center max-w-lg mx-auto my-2  flex justify-center  w-full  gap-2 relative z-10">
           <CircleDot></CircleDot>
           We are always looking for ways to improve our products and services.
           Contact us and let us know how we can help you.

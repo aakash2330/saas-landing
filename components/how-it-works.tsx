@@ -55,7 +55,7 @@ export function Features() {
     <div className="bg-black py-[72px] mt-[5rem] space-y-16  text-white sm:py-24">
       <div className="container">
         <HeroTitle title="Why choose Us ?"></HeroTitle>
-        <div className="mt-16 grid grid-cols-2 gap-4 sm:flex-row">
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:flex-row">
           {featuresList.map((feature) => (
             <FeatureCard key={feature.id} feature={feature} />
           ))}
