@@ -14,7 +14,7 @@ export const HeroTitle = ({ title }: { title: string }) => {
         </h1>
         <motion.div
           ref={ref}
-          className="h-1 mt-2 origin-center"
+          className="h-1 mt-4 origin-center"
           style={{
             width: "100%",
             background:

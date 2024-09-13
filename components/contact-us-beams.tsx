@@ -12,7 +12,7 @@ export function BackgroundBeamsDemo() {
         <h1 className="relative z-10 text-lg md:text-7xl text-center font-sans font-bold">
           Contact Us
         </h1>
-        <p className="text-white max-w-lg mx-auto my-2 text-sm text-center relative z-10">
+        <p className="text-white max-w-lg mx-auto my-2 text-center relative z-10">
           Reach out to us at info@easyanalysis.ai
         </p>
       </div>
