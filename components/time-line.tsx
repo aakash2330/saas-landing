@@ -29,7 +29,7 @@ export function TimelineDemo() {
     },
 
     {
-      title: "Advance Hypothesis",
+      title: "Advanced Hypothesis",
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">

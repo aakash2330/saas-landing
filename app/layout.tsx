@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Gaegu } from "@next/font/google";
 import { JetBrains_Mono } from "@next/font/google";
+import Head from "next/head";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "EasyAnalysis.ai",
+  icons: [{ rel: "icon", url: "../public/favicon.ico" }],
 };
 
 export default function RootLayout({
