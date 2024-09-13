@@ -62,7 +62,7 @@ export function FeatureCard({
       <h3 className="mt-6 text-xl font-bold" style={{ color: color }}>
         {title}
       </h3>
-      <p className="mt-2 font-light text-white/90">{description}</p>
+      <div className="mt-2 font-light text-white/90">{description}</div>
     </div>
   );
 }

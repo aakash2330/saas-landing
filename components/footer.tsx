@@ -1,4 +1,7 @@
 "use client";
+
+import { HeroEmail } from "./hero-email";
+
 export function Footer() {
   function scrollTo(id: string) {
     const section = document.querySelector(id);
@@ -8,7 +11,9 @@ export function Footer() {
     <div className="bg-neutral-950 w-full flex justify-center items-center">
       <div className="mb-[6rem] bg-neutral-950 max-w-7xl">
         <div className=" flex justify-around items-center w-full mt-[6rem]  ">
-          <div>Contact us: info@easyanalysis.ai</div>
+          <div>
+            Contact us: <HeroEmail />
+          </div>
           <div>All rights reserved. Easyanalysis.ai 2025</div>
 
           <div className="flex text-4xl justify-center items-center">

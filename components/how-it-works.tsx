@@ -5,11 +5,12 @@ import blue from "../public/Zero_stat.svg";
 import yellow from "../public/Easy to use.svg";
 import green from "../public/Custom_sol.svg";
 import { HeroTitle } from "./hero-title";
+import { HeroEmail } from "./hero-email";
 
 export interface Feature {
   id: string;
   title: string;
-  description: string;
+  description: any;
   color: string;
   icon: any;
 }
@@ -18,24 +19,38 @@ export const featuresList: Feature[] = [
   {
     id: "1",
     title: "Zero statistical knowledge required",
-    description:
-      "Our state-of-the-art algorithm understands your data at depth, automatically applies the relevant statistics, and interprets the results for you.",
+    description: (
+      <p>
+        Our state-of-the-art algorithm understands your data at depth,
+        automatically applies the relevant statistics, and interprets the
+        results for you.
+      </p>
+    ),
     color: "#2589FE",
     icon: blue,
   },
   {
     id: "2",
     title: "User-Friendly Interface",
-    description:
-      "Our platform is designed to be intuitive and easy to use, so you can get started quickly without any technical expertise.",
+    description: (
+      <p>
+        Our platform is designed to be intuitive and easy to use, so you can get
+        started quickly without any technical expertise.
+      </p>
+    ),
     color: "#FECA13",
     icon: yellow,
   },
   {
     id: "3",
     title: "Save Time and Effort",
-    description:
-      "Don’t waste hours analyzing data in Excel or R. Let us crunch the numbers, plot the graphs, and generate a presentation so you can focus on what matters.",
+    description: (
+      <p>
+        Don’t waste hours analyzing data in Excel or R. Let us crunch the
+        numbers, plot the graphs, and generate a presentation so you can focus
+        on what matters.
+      </p>
+    ),
     color: "#C502C9",
     icon: purple,
   },
@@ -43,8 +58,12 @@ export const featuresList: Feature[] = [
   {
     id: "4",
     title: "Custom Solutions",
-    description:
-      "Tailored solutions to meet the unique needs of your business, ensuring you get the most relevant insights. Reach out to us at info@easyanalysis.ai",
+    description: (
+      <p>
+        Tailored solutions to meet the unique needs of your business, ensuring
+        you get the most relevant insights. Reach out to us at <HeroEmail />
+      </p>
+    ),
     color: "#25B600",
     icon: green,
   },

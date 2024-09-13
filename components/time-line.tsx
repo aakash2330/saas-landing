@@ -4,6 +4,7 @@ import { Timeline } from "@/components/ui/timeline";
 import img3 from "../public/assets/Image3.png";
 import darkMode from "../public/assets/new/AI_categorisation_dark_mode.png";
 import customReports from "../public/assets/new/Custom_reports.png";
+import { HeroEmail } from "./hero-email";
 
 export function TimelineDemo() {
   const data = [
@@ -82,12 +83,12 @@ export function TimelineDemo() {
       ),
       content: (
         <div>
-          <p className=" font-light mb-8">
+          <div className=" font-light mb-8">
             {` We can even conduct custom statistical analysis based on your use cases & Can generate fully bespoke reports with your company's branding to seamlessly fit with your workflows.
 `}
             <br />
-            Reach out to info@easyanalysis.ai
-          </p>
+            Reach out to <HeroEmail/>
+          </div>
           <div className="grid grid-cols-4 gap-4">
             <Image
               src={customReports}

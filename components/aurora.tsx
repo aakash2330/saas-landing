@@ -65,9 +65,9 @@ export function Aurora() {
               correlations, statistics and graphs
             </motion.div>
           </div>
-          <button className="p-[3px] z-[999] relative">
+          <button className="p-[3px] hover:shadow-2xl z-[999] relative">
             <div className="absolute inset-0 bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] rounded-[6px]" />
-            <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+            <div className="px-8 py-2  bg-black rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent">
               Upload your excel file
             </div>
           </button>
