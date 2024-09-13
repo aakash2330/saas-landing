@@ -9,14 +9,23 @@ export const HeroTitle = ({ title }: { title: string }) => {
   return (
     <motion.div
       ref={ref}
-      className="text-3xl z-[999] text-white md:text-7xl font-bold dark:text-white text-center"
+      className="text-center"
       initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : {}} // Trigger only when in view
-      transition={{ delay: 0.3, duration: 1.5 }}
+      animate={isInView ? { opacity: 1 } : {}}
+      transition={{ delay: 0.1, duration: 1 }}
     >
-      <h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-white bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
-        {title}
-      </h1>
+      <div className="inline-block">
+        <h1 className="relative z-10 text-lg md:text-6xl bg-clip-text text-white font-bold">
+          {title}
+        </h1>
+        <motion.div
+          className="bg-white h-1 mt-2 origin-center"
+          style={{ width: "100%" }}
+          initial={{ scaleX: 0 }}
+          animate={isInView ? { scaleX: 1 } : {}}
+          transition={{ duration: 1 }}
+        />
+      </div>
     </motion.div>
   );
 };
