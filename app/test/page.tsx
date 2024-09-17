@@ -1,3 +1,5 @@
+import { CardStackDemo } from "@/components/why-us-cards";
+
 export default function Page() {
-  return <div></div>;
+  return <CardStackDemo></CardStackDemo>;
 }

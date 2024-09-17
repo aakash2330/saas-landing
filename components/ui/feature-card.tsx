@@ -1,8 +1,8 @@
 "use client";
+
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { Feature } from "../how-it-works";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 interface FeatureCardProps {
@@ -40,7 +40,7 @@ export function FeatureCard({
   return (
     <div
       key={id}
-      className="relative w-[30rem]  rounded-xl border border-white/30 px-5 py-10 text-center"
+      className="relative w-full  rounded-xl border border-white/30 px-5 py-10 text-center"
     >
       <motion.div
         ref={border}
