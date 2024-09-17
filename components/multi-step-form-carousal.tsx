@@ -128,7 +128,9 @@ export function CarouselDemo() {
             </div>
             <FeedbackInput question="How much is the Product worth to you ?"></FeedbackInput>
             <FeedbackInput question="What is your job title ?"></FeedbackInput>
-            <FeedbackInput question="What is your job title ?"></FeedbackInput>
+            <FeedbackInput question="What country are you located in ?"></FeedbackInput>
+            <FeedbackInput question="What is your work email ? We promise not to spam you ."></FeedbackInput>
+            <FeedbackInput question="What is your work email ? We promise not to spam you ."></FeedbackInput>
           </div>
         </div>
       ),

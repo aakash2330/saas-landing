@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "./ui/button";
-import { Trash, Trash2Icon, TrashIcon } from "lucide-react";
+import { Trash2Icon } from "lucide-react";
 
 export function SelectGroupItem({
   columns,
@@ -85,6 +85,7 @@ export function SelectGroupItem({
       <Button
         className="bg-transparent flex gap-2 text-neutral-300 hover:bg-transparent"
         onClick={() => {
+          //@ts-expect-error - any
           setColumnPairs((prev) => {
             const updatedPrev = [...prev];
             updatedPrev.splice(prev.length - 1);

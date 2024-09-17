@@ -1,6 +1,5 @@
 "use client";
 
-import { AuroraBackground } from "@/components/ui/aurora-background";
 import { AnimationControls, motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
@@ -8,7 +7,6 @@ import { BarChartExample } from "./bar-chart";
 import { BackgroundGradientAnimation } from "./ui/gradiant-background";
 import { Navbar } from "./navbar";
 import { DrawerDialogDemo } from "./ui/responsiveDrawerDialog";
-import { SelectDemo } from "./form-select";
 
 const DynamicLineDrawingAnimation = dynamic(
   () => import("../components/graph-animation"),
