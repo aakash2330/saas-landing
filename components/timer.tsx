@@ -4,6 +4,7 @@ import * as React from "react";
 
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
+import { Button } from "./ui/button";
 
 function progressColors({ progress }: { progress: number }) {
   if (progress === 100) {
@@ -21,6 +22,7 @@ export function ProgressTimer({
   progressTimerStart: boolean;
 }) {
   const [progress, setProgress] = React.useState(0);
+  console.log({ progress });
 
   React.useEffect(() => {
     if (progressTimerStart) {
@@ -42,12 +44,21 @@ export function ProgressTimer({
 
   return (
     <>
-      <Progress
-        value={progressPercent} // Pass the scaled progress here
-        className={cn(
-          `${progressColors({ progress: progressPercent })} h-1 transition-all`,
-        )}
-      />
+      {progress !== 10000 ? (
+        <Progress
+          value={progressPercent} // Pass the scaled progress here
+          className={cn(
+            `${progressColors({ progress: progressPercent })} h-1 bg-transparent  transition-all`,
+          )}
+        />
+      ) : (
+        <div className="flex flex-col justify-center items-center">
+          <Button className="bg-zinc-200 hover:bg-zinc-300">
+            Open Report in a new Tab
+          </Button>
+          <p className="text-xs">Link will expire in 5 mins</p>
+        </div>
+      )}
     </>
   );
 }

@@ -23,7 +23,8 @@ export function SelectGroupItem({
   indexValue: number;
 }) {
   return (
-    <div className="flex justify-between items-center p-5">
+    <div className="flex justify-between items-center gap-3">
+      <div>{indexValue + 1}</div>
       <div>
         <Select
           onValueChange={(value) => {
@@ -35,11 +36,11 @@ export function SelectGroupItem({
             });
           }}
         >
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-[180px] border-zinc-200">
             <SelectValue placeholder="Column 1" />
           </SelectTrigger>
-          <SelectContent className="z-[999]">
-            <SelectGroup>
+          <SelectContent className="z-[999] bg-zinc-900 border-none">
+            <SelectGroup className="">
               {columns.map((item, index) => {
                 return (
                   columnPairs[indexValue].value2 !== item && (
@@ -53,6 +54,7 @@ export function SelectGroupItem({
           </SelectContent>
         </Select>
       </div>
+      <div>vs</div>
       <div>
         <Select
           onValueChange={(value) => {
@@ -64,7 +66,7 @@ export function SelectGroupItem({
             });
           }}
         >
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-[180px] border-none">
             <SelectValue placeholder="Column 2" />
           </SelectTrigger>
           <SelectContent className="z-[999]">
@@ -93,7 +95,11 @@ export function SelectGroupItem({
           });
         }}
       >
-        <Trash2Icon className="bg-neutral-900 text-white"></Trash2Icon>
+        {indexValue == columnPairs.length - 1 ? (
+          <Trash2Icon className="bg-neutral-900 size-6 text-white"></Trash2Icon>
+        ) : (
+          <div className="min-h-6 min-w-6"></div>
+        )}
       </Button>
     </div>
   );

@@ -4,9 +4,11 @@ import * as XLSX from "xlsx";
 import { FileUpload } from "@/components/ui/file-upload";
 
 export function FileUploadDemo({
+  carousalNext,
   setFile,
   setColumns,
 }: {
+  carousalNext: Function;
   setFile: any;
   setColumns: any;
 }) {
@@ -20,6 +22,7 @@ export function FileUploadDemo({
       const sheet = workbook.Sheets[workbook.SheetNames[0]];
       const sheetColumns = XLSX.utils.sheet_to_json(sheet, { header: 1 })[0];
       setColumns(sheetColumns || []);
+      carousalNext();
     };
     reader.readAsArrayBuffer(file[0]);
   };

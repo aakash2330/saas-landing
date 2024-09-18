@@ -3,10 +3,15 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { useMediaQuery } from "@/hooks/useMediaQueryShad";
 import { CarouselDemo } from "../multi-step-form-carousal";
+import { DialogClose } from "@radix-ui/react-dialog";
 
 export function DrawerDialogDemo() {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
+
+  function closeDialog() {
+    document.getElementById("closeDialogButton")?.click();
+  }
 
   if (isDesktop) {
     return (
@@ -19,8 +24,9 @@ export function DrawerDialogDemo() {
             </div>
           </button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-fit bg-zinc-950  z-[999]">
-          <CarouselDemo></CarouselDemo>
+        <DialogContent className="sm:max-w-fit bg-zinc-800 z-[999]">
+          <CarouselDemo closeDialog={closeDialog}></CarouselDemo>
+          <DialogClose className="hidden" id="closeDialogButton"></DialogClose>
         </DialogContent>
       </Dialog>
     );
@@ -37,7 +43,7 @@ export function DrawerDialogDemo() {
         </button>
       </DrawerTrigger>
       <DrawerContent>
-        <CarouselDemo></CarouselDemo>
+          <CarouselDemo closeDialog={closeDialog}></CarouselDemo>
       </DrawerContent>
     </Drawer>
   );

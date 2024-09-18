@@ -69,13 +69,13 @@ export const FileUpload = ({
         />
         <div className="absolute inset-0 h-fit "></div>
         <div className="flex flex-col items-center justify-center">
-          {!files && (
-            <p className="relative z-20 font-sans font-normal text-neutral-400 dark:text-neutral-400 text-base mt-2">
-              Drag or drop your files here or click to upload
+          {
+            <p className="relative z-20 font-sans font-normal text-white dark:text-neutral-400 text-base mt-2">
+              Please upload an Excel File to continue
             </p>
-          )}
+          }
           <div className="relative w-full mt-10 max-w-xl mx-auto">
-            {!files.length && (
+            {
               <motion.div
                 layoutId="file-upload"
                 variants={mainVariant}
@@ -102,7 +102,7 @@ export const FileUpload = ({
                   <IconUpload className="h-4 w-4 text-neutral-300" />
                 )}
               </motion.div>
-            )}
+            }
 
             {!files.length && (
               <motion.div

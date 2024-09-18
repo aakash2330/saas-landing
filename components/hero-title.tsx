@@ -2,14 +2,22 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-export const HeroTitle = ({ title }: { title: string }) => {
+export const HeroTitle = ({
+  title,
+  size,
+}: {
+  title: string;
+  size?: "large" | "small";
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // `once: true` ensures it only triggers the first time
 
   return (
     <div className="text-center">
       <div className="inline-block">
-        <h1 className="relative z-10 text-lg md:text-6xl bg-clip-text text-white font-bold">
+        <h1
+          className={`relative z-10 ${size == "small" ? "text-2xl" : "text-6xl"} bg-clip-text text-white font-bold`}
+        >
           {title}
         </h1>
         <motion.div
