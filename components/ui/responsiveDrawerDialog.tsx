@@ -42,8 +42,8 @@ export function DrawerDialogDemo() {
           </div>
         </button>
       </DrawerTrigger>
-      <DrawerContent>
-          <CarouselDemo closeDialog={closeDialog}></CarouselDemo>
+      <DrawerContent className="z-[999] p-5">
+        <CarouselDemo closeDialog={closeDialog}></CarouselDemo>
       </DrawerContent>
     </Drawer>
   );

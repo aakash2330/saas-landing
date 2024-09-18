@@ -78,7 +78,7 @@ export function LogoTicker() {
             {Array.from({ length: 2 }).map(() =>
               logosTickers.map((logo) => (
                 <div
-                  className="text-neutral-600 font-bold text-xl"
+                  className="text-neutral-600  w-full text-center font-bold text-xl"
                   key={logo.id}
                 >
                   {logo.alt}

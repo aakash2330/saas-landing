@@ -8,21 +8,21 @@ export function CareersSection() {
   return (
     <div
       id="startContactUs"
-      className="h-full w-full rounded-md mt-[15rem]  relative flex flex-col items-center justify-center antialiased"
+      className="h-full w-full rounded-md mt-[8rem] sm:mt-[10rem] md:mt-[12rem] lg:mt-[15rem] relative flex flex-col items-center justify-center antialiased"
     >
       <div className="max-w-2xl mx-auto p-4">
         <HeroTitle title="Careers"></HeroTitle>
-        <p className="text-white mt-8 text-center max-w-lg mx-auto my-2  flex justify-center  w-full  gap-2 relative z-10">
+        <p className="text-white mt-8 text-center max-w-lg mx-auto my-2 flex justify-center w-full gap-2 relative z-10">
           <CircleDot></CircleDot>
           Front End SDE | - Sept start - applications closed
         </p>
       </div>
 
-      <div className="flex text-neutral-500  justify-center items-center gap-2">
+      <div className="flex text-neutral-500 justify-center items-center gap-2 text-center px-4 sm:px-6">
         We do not have any open positions but will be expanding our team soon
         and will post new job openings here. Stay tuned!
       </div>
-      <div className="w-full h-[1px] bg-white/50 mt-[20rem]"></div>
+      <div className="w-full h-[1px] bg-white/50 mt-[10rem] sm:mt-[12rem] lg:mt-[15rem]"></div>
       <Footer></Footer>
     </div>
   );
