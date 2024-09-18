@@ -71,10 +71,10 @@ export const featuresList: Feature[] = [
 
 export function Features() {
   return (
-    <div className="bg-black py-[72px] px-20 mt-[5rem] space-y-16 text-white sm:py-24">
+    <div className="bg-black py-[72px] px-6 sm:px-12 lg:px-20 mt-[5rem] space-y-16 text-white sm:py-24">
       <div className="container">
-        <HeroTitle title="Why choose Us ?"></HeroTitle>
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:flex-row">
+        <HeroTitle title="Why choose Us ?" />
+        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
           {featuresList.map((feature) => (
             <FeatureCard key={feature.id} feature={feature} />
           ))}

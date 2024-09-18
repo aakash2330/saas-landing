@@ -16,7 +16,11 @@ export const HeroTitle = ({
     <div className="text-center">
       <div className="inline-block">
         <h1
-          className={`relative z-10 ${size == "small" ? "text-2xl" : "text-6xl"} bg-clip-text text-white font-bold`}
+          className={`relative z-10 ${
+            size == "small"
+              ? "text-2xl md:text-3xl lg:text-4xl"
+              : "text-4xl md:text-5xl lg:text-6xl"
+          } bg-clip-text text-white font-bold`}
         >
           {title}
         </h1>
