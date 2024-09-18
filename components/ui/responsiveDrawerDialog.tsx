@@ -42,7 +42,7 @@ export function DrawerDialogDemo() {
           </div>
         </button>
       </DrawerTrigger>
-      <DrawerContent className="z-[999] p-5">
+      <DrawerContent className="z-[999] p-5 bg-zinc-800 border-none ">
         <CarouselDemo closeDialog={closeDialog}></CarouselDemo>
       </DrawerContent>
     </Drawer>
