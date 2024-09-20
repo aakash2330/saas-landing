@@ -243,7 +243,7 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
           )}
           <br />
           {!feedback ? (
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col pb-5 gap-5">
               <div>
                 <p className="text-neutral-200">
                   We are Proud to serve you for{" "}
@@ -337,7 +337,7 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
               ></HeroTitle>
             </div>
             <br />
-            <div className="font-light my-5 -mt-1  border border-b-white text-neutral-400 flex-1 py-3 overflow-y-auto">
+            <div className="font-light my-5 -mt-1 border border-b-white text-neutral-400 flex-1 py-3 overflow-y-auto">
               {item.content}
             </div>
             <div className="flex justify-end gap-5 items-center">
