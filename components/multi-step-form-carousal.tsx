@@ -28,6 +28,27 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
   >([]);
   const [progressTimerStart, setProgressTimerStart] = useState(false);
   const [feedback, setFeedback] = useState<any>(false);
+  const [reportGenerated, setReportGenerated] = useState(false);
+  const [generateReportTitle, setGenerateReportTitle] =
+    useState("Generating Report");
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      if (reportGenerated) {
+        setGenerateReportTitle("Your Report is ready");
+        return clearInterval(interval);
+      }
+      setGenerateReportTitle((prev) => {
+        const currentDots = prev.split(".").length - 1;
+        if (currentDots <= 3) {
+          return prev + ".";
+        } else {
+          return "Generating Report";
+        }
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [reportGenerated]);
 
   const handleFileChange = (e: any) => {
     setFile(e.target.files[0]);
@@ -45,27 +66,38 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
     reader.readAsArrayBuffer(e.target.files[0]);
   };
 
-  console.log({ columnPairs });
-
   const carouselConfig = [
     {
       title: "Disclaimer",
       content: (
-        <div className="font-light ">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum
+        <div className="font-light">
+          By using EasyAnalysis (accessible at easyanalysis.ai), you acknowledge
+          and agree to the following terms: Data Upload Risks: You understand
+          that uploading files, including Excel documents, carries risks such as
+          data breaches, unauthorized access, data loss, or leaks. You assume
+          all risks associated with uploading and analyzing your data. No
+          Guarantee of Security: While we implement reasonable security
+          measures, we cannot guarantee complete protection against all
+          potential threats. You should refrain from uploading sensitive or
+          confidential information unless you are willing to accept the
+          associated risks. Use of AI and Third-Party Services: Our services may
+          use artificial intelligence and third-party APIs, including those from
+          OpenAI. We do not control these services and are not responsible for
+          their performance, availability, or any security vulnerabilities. Data
+          Ownership and Responsibility: You retain ownership of your data. By
+          uploading files to EasyAnalysis, you grant us a non-exclusive,
+          worldwide, royalty-free license to process your data solely for the
+          purpose of providing our analysis services. You are solely responsible
+          for the legality of the data you upload. Limitation of Liability:
+          EasyAnalysis, its founders, and affiliates shall not be liable for any
+          direct, indirect, incidental, special, or consequential damages
+          arising from your use of our services or your inability to access or
+          use them, even if advised of the possibility of such damages.
+          Amendments: We reserve the right to modify this disclaimer at any
+          time. Your continued use of our services after any changes constitutes
+          acceptance of the new terms. By using EasyAnalysis or any of our other
+          sevices, you confirm that you have read, understood, and agree to this
+          disclaimer.
         </div>
       ),
       footer: (
@@ -93,7 +125,7 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
               }}
               htmlFor="fileInput"
               style={{ cursor: "pointer" }}
-              className="w-fit p-3 border  border-neutral-800 bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] text-white "
+              className="w-fit p-3 border rounded-[6px]  border-neutral-800 bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] text-white hover:-translate-y-1 transform transition duration-200 hover:shadow-md"
             >
               Agree & Upload Excel File
             </Label>
@@ -128,20 +160,18 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
       ),
     },
     {
-      title: "Add optional Hypothesis tests for free",
+      title: "Add Free Hypothesis Tests",
       content: (
-        <>
-          <div className="font-light">
+        <div className="h-full">
+          <div className="font-light h-full">
             <div>
               We can use specialised tests to compare 2 fields of data and
               determine if they're correlated, E.g. 'Age' might be correlated to
               'Wisdom'
             </div>
             <br />
-            <div>Use the dropdowns below to select fields from your file </div>
-            <br />
             {file && (
-              <div className="w-full flex flex-col gap-3 overflow-y-auto">
+              <div className="w-full mt-[3rem] flex  justify-center items-center flex-col gap-3 overflow-y-auto">
                 {columnPairs.map((column, index) => {
                   return (
                     <SelectGroupItem
@@ -153,7 +183,7 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
                     ></SelectGroupItem>
                   );
                 })}
-                <div className="w-full flex justify-start items-center">
+                <div className="w-full mb-5 mt-[3rem] flex justify-center items-center">
                   <div
                     onClick={() => {
                       setColumnPairs((prev) => [
@@ -164,13 +194,15 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
                     className="bg-transparent hover:cursor-pointer flex gap-2 text-neutral-300 hover:bg-transparent"
                   >
                     <PlusCircle className="text-white"></PlusCircle>
-                    <div className="hover:underline">Add Hypothesis test</div>
+                    <div className="underline font-semibold">
+                      Add Hypothesis test
+                    </div>
                   </div>
                 </div>
               </div>
             )}
           </div>
-        </>
+        </div>
       ),
       footer: (
         <>
@@ -184,7 +216,9 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
 
           <CarouselButton
             onClick={() => {
-              setProgressTimerStart(true);
+              setTimeout(() => {
+                setReportGenerated(true);
+              }, 10000);
               carousalNext();
             }}
             variant="nice"
@@ -196,12 +230,17 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
     },
 
     {
-      title: "Please wait while your report is generated",
+      title: generateReportTitle,
       content: (
         <div className="font-light h-full  text-sm">
-          <ProgressTimer
-            progressTimerStart={progressTimerStart}
-          ></ProgressTimer>
+          {reportGenerated && (
+            <div className="flex flex-col justify-center items-center">
+              <Button className="bg-zinc-200 hover:-translate-y-1 transform transition duration-200 hover:shadow-md bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] text-white rounded-[6px] hover:bg-zinc-300">
+                Open Report in a new Tab
+              </Button>
+              <p className="text-xs">Link will expire in 5 mins</p>
+            </div>
+          )}
           <br />
           {!feedback ? (
             <div className="flex flex-col gap-5">
@@ -237,7 +276,7 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
           ) : (
             <div className="flex flex-col justify-center items-center mt-20">
               <div className="text-2xl font-bold text-neutral-200">
-                Thankyou sooo much !
+                Thank you sooo much!
               </div>
               <div className="text-light text-neutral-400">
                 We really appreciate your feedback
@@ -283,18 +322,22 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
   }
 
   return (
-    <Carousel className="w-full max-w-lg">
+    <Carousel className="w-full max-w-xl">
       <CarouselContent>
         {carouselConfig.map((item, index) => (
           <CarouselItem
-            className=" h-[30rem] py-3 flex flex-col justify-between "
+            className=" h-[30rem] flex flex-col justify-between "
             key={index}
           >
             <div className="self-start">
-              <HeroTitle size="small" title={item.title}></HeroTitle>
+              <HeroTitle
+                animation={false}
+                size="small"
+                title={item.title}
+              ></HeroTitle>
             </div>
             <br />
-            <div className="font-light text-neutral-400 flex-1 py-3 overflow-y-auto  no-scrollbar">
+            <div className="font-light my-5  border border-b-white text-neutral-400 flex-1 py-3 overflow-y-auto">
               {item.content}
             </div>
             <div className="flex justify-end gap-5 items-center">
@@ -325,13 +368,16 @@ function CarouselButton({
   return (
     <Button
       onClick={onClick}
-      className={`w-fit p-2 border border-neutral-800 ${variant == "nice" ? "bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] text-white" : "bg-zinc-200"} hover:bg-zinc-200`}
+      className={`text-white z-[999] ${variant == "nice" ? "bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] text-white" : "text-white bg-transparent border-white"}  py-2 px-4 hover:bg-transparent rounded-[6px] hover:-translate-y-1 transform transition duration-200 hover:shadow-md`}
+      variant={variant == "nice" ? "default" : "outline"}
     >
       {children}
     </Button>
   );
 }
-
+<button className="px-4 py-2 rounded-md border border-neutral-300 bg-neutral-100 text-neutral-500 text-sm hover:-translate-y-1 transform transition duration-200 hover:shadow-md">
+  Simple
+</button>;
 function FeedbackInput({ question }: { question: string }) {
   return (
     <div className="flex flex-col space-y-1.5">

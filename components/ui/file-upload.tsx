@@ -70,7 +70,7 @@ export const FileUpload = ({
         <div className="absolute inset-0 h-fit "></div>
         <div className="flex flex-col items-center justify-center">
           {
-            <p className="relative z-20 font-sans font-normal text-white dark:text-neutral-400 text-base mt-2">
+            <p className="font-light text-neutral-400">
               Please upload an Excel File to continue
             </p>
           }

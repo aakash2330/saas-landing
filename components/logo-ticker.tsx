@@ -61,7 +61,7 @@ export function LogoTicker() {
   const { isMobile } = useMediaQuery();
 
   return (
-    <div className="bg-black py-12  text-white">
+    <div className="bg-black py-12 w-full  text-white">
       <div className="container">
         <div className="relative mt-9 flex overflow-hidden before:left-0 before:top-0 before:z-10 before:h-full before:w-5 before:bg-[linear-gradient(to_right,#000,rgba(0,0,0,0))] after:right-0 after:top-0 after:h-full after:w-5 after:bg-[linear-gradient(to_left,#000,rgba(0,0,0,0))] sm:before:absolute sm:before:content-[''] sm:after:absolute sm:after:content-['']">
           {/* {isMobile? : } */}

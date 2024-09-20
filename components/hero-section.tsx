@@ -19,8 +19,8 @@ export default function HeroSection() {
           className={`rounded-xl  before:absolute before:bottom-1/2 before:left-0 before:top-0 before:h-full before:w-full before:opacity-0 before:[filter:blur(180px)] before:[background-image:linear-gradient(to_bottom,var(--color-one),var(--color-one),transparent_40%)] `}
         >
           <Image
-            width={800}
-            height={800}
+            width={1000}
+            height={1000}
             src={heroImage}
             alt="Hero Image"
             className="block  relative dark:hidden border rounded-[inherit] w-full h-full object-contain"

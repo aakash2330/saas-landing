@@ -17,9 +17,7 @@ export function UseCasesCaraousal() {
 
   return (
     <div className="w-full text-center h-full mt-[7rem]">
-      <div className="max-w-2xl mx-auto p-4">
-      <HeroTitle title="Use cases"></HeroTitle>
-      </div>
+      <div className="max-w-2xl mx-auto p-4"></div>
       <Carousel items={cards} />
     </div>
   );

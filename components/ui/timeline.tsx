@@ -36,7 +36,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <div className="w-full text-center h-full">
         <div className=" mx-auto p-4">
-          <HeroTitle title="Features Highlight"></HeroTitle>
+          <HeroTitle title="Our New Features"></HeroTitle>
         </div>
       </div>
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">

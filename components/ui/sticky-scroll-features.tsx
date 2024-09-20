@@ -30,7 +30,18 @@ const content = [
   },
 ];
 
-export const colors = ["#F4771C", "#1764FC", "#9F1BB5"];
+export const colors = [
+  "hsl(25, 91%, 54%)",
+  "hsl(220, 97%, 58%)",
+  "hsl(291, 74%, 45%)",
+];
+
+export const colorsBrighter = [
+  "hsl(25, 91%, 54%)",
+  "hsl(220, 97%, 60%)",
+  "hsl(291, 74%, 50%)",
+];
+
 export function StickyScrollRevealDemo() {
   return (
     <div className=" w-full px-[15%] pt-[2%]  flex justify-center items-center flex-col">
@@ -43,7 +54,7 @@ export function StickyScrollRevealDemo() {
             <div key={index} className="grid grid-cols-8">
               <div className="col-span-3 flex flex-col justify-center items-center">
                 <div
-                  style={{ color: colors[index] }}
+                  style={{ color: colorsBrighter[index] }}
                   className="text-2xl text-right w-full"
                 >
                   {item.title}
@@ -87,7 +98,7 @@ export function StickyScrollRevealDemo() {
               </div>
               <div className="col-span-3  flex flex-col justify-center items-center">
                 <div
-                  style={{ color: colors[index] }}
+                  style={{ color: colorsBrighter[index] }}
                   className="text-2xl text-left w-full"
                 >
                   {item.title}

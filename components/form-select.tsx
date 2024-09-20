@@ -9,7 +9,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "./ui/button";
-import { Trash2Icon } from "lucide-react";
+import { MinusCircle, Trash2Icon } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip";
 
 export function SelectGroupItem({
   columns,
@@ -23,8 +29,8 @@ export function SelectGroupItem({
   indexValue: number;
 }) {
   return (
-    <div className="flex justify-between items-center gap-3">
-      <div>{indexValue + 1}</div>
+    <div className="flex justify-between items-center gap-1">
+      <div className="mr-2">{indexValue + 1}.</div>
       <div>
         <Select
           onValueChange={(value) => {
@@ -36,10 +42,10 @@ export function SelectGroupItem({
             });
           }}
         >
-          <SelectTrigger className="w-[180px] border-zinc-200">
-            <SelectValue placeholder="Column 1" />
+          <SelectTrigger className="w-[220px] bg-neutral-950 border-none">
+            <SelectValue placeholder="Column 2" />
           </SelectTrigger>
-          <SelectContent className="z-[999] bg-zinc-900 border-none">
+          <SelectContent className="z-[999] bg-neutral-900">
             <SelectGroup className="">
               {columns.map((item, index) => {
                 return (
@@ -66,10 +72,10 @@ export function SelectGroupItem({
             });
           }}
         >
-          <SelectTrigger className="w-[180px] border-none">
+          <SelectTrigger className="w-[220px] bg-neutral-950 border-none">
             <SelectValue placeholder="Column 2" />
           </SelectTrigger>
-          <SelectContent className="z-[999]">
+          <SelectContent className="z-[999] bg-neutral-900">
             <SelectGroup>
               {columns.map((item, index) => {
                 return (
@@ -84,23 +90,34 @@ export function SelectGroupItem({
           </SelectContent>
         </Select>
       </div>
-      <Button
-        className="bg-transparent flex gap-2 text-neutral-300 hover:bg-transparent"
-        onClick={() => {
-          //@ts-expect-error - any
-          setColumnPairs((prev) => {
-            const updatedPrev = [...prev];
-            updatedPrev.splice(prev.length - 1);
-            return updatedPrev;
-          });
-        }}
-      >
-        {indexValue == columnPairs.length - 1 ? (
-          <Trash2Icon className="bg-neutral-900 size-6 text-white"></Trash2Icon>
-        ) : (
-          <div className="min-h-6 min-w-6"></div>
-        )}
-      </Button>
+      {indexValue == columnPairs.length - 1 ? (
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger
+              className="bg-transparent hover:cursor-pointer flex gap-2 p-0 text-neutral-300 hover:bg-transparent"
+              onClick={() => {
+                //@ts-expect-error - any
+                setColumnPairs((prev) => {
+                  const updatedPrev = [...prev];
+                  updatedPrev.splice(prev.length - 1);
+                  return updatedPrev;
+                });
+              }}
+              asChild
+            >
+              <MinusCircle className="bg-neutral-900 size-6 text-white"></MinusCircle>
+            </TooltipTrigger>
+            <TooltipContent
+              className="bg-neutral-600 -translate-x-14"
+              side="bottom"
+            >
+              Remove Hypothesis Test
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      ) : (
+        <div className="min-h-6 min-w-6"></div>
+      )}
     </div>
   );
 }

@@ -24,7 +24,7 @@ export function DrawerDialogDemo() {
             </div>
           </button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-fit bg-zinc-800 z-[999]">
+        <DialogContent className="sm:max-w-fit flex justify-center items-center bg-zinc-800 z-[999]">
           <CarouselDemo closeDialog={closeDialog}></CarouselDemo>
           <DialogClose className="hidden" id="closeDialogButton"></DialogClose>
         </DialogContent>
