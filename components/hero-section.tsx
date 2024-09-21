@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import heroImage from "../public/Hero_new.png";
+import { HeroTitle } from "./hero-title";
 
 export default function HeroSection() {
   const ref = useRef(null);
@@ -30,10 +31,7 @@ export default function HeroSection() {
 
       <div className="mx-auto flex max-w-screen-xl flex-col gap-8 px-4 py-14 md:px-8">
         <div className="mx-auto max-w-5xl text-center">
-          <h2 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">
-            {` Don't waste Hours analysing data `}
-          </h2>
-
+          <HeroTitle title=" Don't waste Hours analysing data "></HeroTitle>
           <p className="mt-6 text-xl leading-8 text-white">
             Let us crunch the <strong>numbers</strong>, plot the{" "}
             <strong>graphs</strong> and generate a <strong>presentation</strong>{" "}

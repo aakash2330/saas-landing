@@ -70,35 +70,6 @@ export function Navbar() {
           </button>
         </div>
       </div>
-      {/* Mobile menu */}
-      {isOpen && (
-        <div className="lg:hidden z-[999] flex flex-col items-center  text-white py-4 space-y-4 backdrop-blur-lg">
-          <div
-            className="hover:cursor-pointer"
-            onClick={() => {
-              scrollTo("#startFeatures");
-              setIsOpen(false); // Close the menu after selecting
-            }}
-          >
-            Features
-          </div>
-          <div
-            className="hover:cursor-pointer"
-            onClick={() => {
-              scrollTo("#startContactUs");
-              setIsOpen(false); // Close the menu after selecting
-            }}
-          >
-            Contact Us
-          </div>
-          <Button
-            className="bg-transparent border-white rounded-[6px]"
-            variant={"outline"}
-          >
-            Get Started
-          </Button>
-        </div>
-      )}
     </div>
   );
 }

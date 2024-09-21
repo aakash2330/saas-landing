@@ -42,10 +42,10 @@ export function Aurora() {
     <BackgroundGradientAnimation>
       <Navbar></Navbar>
       <div className="flex mt-[10%] py-20 flex-col sm:flex-row justify-center items-center">
-        <div className="z-[900] ">
+        <div className="z-[900] hidden md:block ">
           <BarChartExample></BarChartExample>
         </div>
-        <div className="flex flex-col justify-center gap-14 items-center">
+        <div className="flex w-full md:w-fit p-5  flex-col justify-center gap-14 items-center">
           <div className="z-[900]">
             <motion.div
               className="text-6xl z-[900] text-white font-bold text-center"
@@ -66,7 +66,7 @@ export function Aurora() {
               correlations, statistics and graphs
             </motion.div>
           </div>
-          <div className="flex gap-5">
+          <div className="flex gap-5 flex-col md:flex-row">
             <DrawerDialogDemo></DrawerDialogDemo>
             <DrawerDialogFeedback></DrawerDialogFeedback>
           </div>
