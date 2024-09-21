@@ -20,7 +20,13 @@ import { Input } from "./ui/input";
 import { HeroEmail } from "./hero-email";
 import { HeroTitle } from "./hero-title";
 
-export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
+export function CarouselDemo({
+  closeDialog,
+  type,
+}: {
+  closeDialog: Function;
+  type: "feedback" | "full";
+}) {
   const [file, setFile] = useState<File>();
   const [columns, setColumns] = useState<any[]>([]);
   const [columnPairs, setColumnPairs] = useState<
@@ -65,6 +71,97 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
     };
     reader.readAsArrayBuffer(e.target.files[0]);
   };
+
+  const carouselConfigFeedback = [
+    {
+      title: "Feedback",
+      content: (
+        <div className="font-light h-full  text-sm">
+          {!feedback ? (
+            <div className="flex flex-col pb-5 gap-5 m-1">
+              <div>
+                <p className="text-neutral-200 text-lg">
+                  We are Proud to serve you for{" "}
+                  <b className="font-extrabold">FREE</b>
+                </p>
+                <p className="text-neutral-200 text-lg">
+                  All we ask is that you leave some feedback
+                </p>
+              </div>
+              <div className="flex flex-col space-y-1.5">
+                <Label
+                  className="text-neutral-300 font-light"
+                  htmlFor="howmuch"
+                >
+                  1. How much should a company pay per year for our services?{" "}
+                </Label>
+                <div className="flex justify-start gap-2 items-center">
+                  <Input
+                    id={"howmuch"}
+                    className="bg-zinc-900 border-[1px] w-[30%] font-light border-zinc-600"
+                  />
+                  <div>US dollars per year</div>
+                </div>
+              </div>
+              <FeedbackInput
+                width={50}
+                question="2. What is your job title?"
+              ></FeedbackInput>
+              <FeedbackInput
+                width={30}
+                question="3. What country are you located in?"
+              ></FeedbackInput>
+              <FeedbackInput
+                width={50}
+                question="4. What is your work email? We promise not to spam you."
+              ></FeedbackInput>
+              <div className="font-light text-zinc-200">
+                5. Let us know what you liked, didn't like and how we can
+                improve.
+                <Textarea className="bg-zinc-900 mt-1 border-[1px] font-light border-zinc-600 text-neutral-300 " />
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col justify-center items-center mt-20">
+              <div className="text-2xl font-bold text-neutral-200">
+                Thank you sooo much!
+              </div>
+              <div className="text-light text-neutral-400">
+                We really appreciate your feedback
+              </div>
+              <div className="text-light text-neutral-400">
+                Do drop us a mail at <HeroEmail></HeroEmail> for any enquiries
+                or custom reports
+              </div>
+            </div>
+          )}
+        </div>
+      ),
+      footer: (
+        <>
+          <CarouselButton
+            onClick={() => {
+              closeDialog();
+            }}
+          >
+            Close
+          </CarouselButton>
+
+          {!feedback && (
+            <CarouselButton
+              variant="nice"
+              onClick={() => {
+                console.log("feedback submitted");
+                setFeedback(true);
+              }}
+            >
+              Submit Feedback
+            </CarouselButton>
+          )}
+        </>
+      ),
+    },
+  ];
 
   const carouselConfig = [
     {
@@ -119,16 +216,17 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
               hidden={true}
               onChange={handleFileChange}
             />
-            <Label
+            <Button
               onClick={() => {
+                document.getElementById("fileInput")?.click();
                 carousalNext();
               }}
-              htmlFor="fileInput"
               style={{ cursor: "pointer" }}
-              className="w-fit p-3 border rounded-[6px]  border-neutral-800 bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] text-white hover:-translate-y-1 transform transition duration-200 hover:shadow-md"
+              className="w-fit p-3 border rounded-[6px] border-neutral-800 bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] text-white transform transition-transform duration-200 hover:scale-105 active:scale-100"
+              onMouseOver={() => {}}
             >
               Agree & Upload Excel File
-            </Label>
+            </Button>
           </div>
         </>
       ),
@@ -171,7 +269,7 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
             </div>
             <br />
             {file && (
-              <div className="w-full mt-[3rem] flex  justify-center items-center flex-col gap-3 overflow-y-auto">
+              <div className="w-full flex justify-center items-center flex-col gap-3 overflow-y-auto">
                 {columnPairs.map((column, index) => {
                   return (
                     <SelectGroupItem
@@ -183,7 +281,7 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
                     ></SelectGroupItem>
                   );
                 })}
-                <div className="w-full mb-5 mt-[3rem] flex justify-center items-center">
+                <div className="w-full mb-5  flex justify-start items-center">
                   <div
                     onClick={() => {
                       setColumnPairs((prev) => [
@@ -191,10 +289,10 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
                         { value1: undefined, value2: undefined },
                       ]);
                     }}
-                    className="bg-transparent hover:cursor-pointer flex gap-2 text-neutral-300 hover:bg-transparent"
+                    className="bg-transparent hover:cursor-pointer flex justify-center items-center  gap-2 text-neutral-300 hover:bg-transparent"
                   >
                     <PlusCircle className="text-white"></PlusCircle>
-                    <div className="underline font-semibold">
+                    <div className="underline font-semibold -translate-y-0.5">
                       Add Hypothesis test
                     </div>
                   </div>
@@ -243,13 +341,13 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
           )}
           <br />
           {!feedback ? (
-            <div className="flex flex-col pb-5 gap-5">
+            <div className="flex flex-col pb-5 gap-5 m-1">
               <div>
-                <p className="text-neutral-200">
+                <p className="text-neutral-200 text-lg">
                   We are Proud to serve you for{" "}
                   <b className="font-extrabold">FREE</b>
                 </p>
-                <p className="text-neutral-200">
+                <p className="text-neutral-200 text-lg">
                   All we ask is that you leave some feedback
                 </p>
               </div>
@@ -258,7 +356,7 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
                   className="text-neutral-300 font-light"
                   htmlFor="howmuch"
                 >
-                  1. How much is the Product worth to you?
+                  1. How much should a company pay per year for our services?{" "}
                 </Label>
                 <div className="flex justify-start gap-2 items-center">
                   <Input
@@ -268,10 +366,23 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
                   <div>US dollars per year</div>
                 </div>
               </div>
-              <FeedbackInput question="2. What is your job title?"></FeedbackInput>
-              <FeedbackInput question="3. What country are you located in?"></FeedbackInput>
-              <FeedbackInput question="4. What is your work email? We promise not to spam you."></FeedbackInput>
-              <FeedbackInput question="5. Let us know what you liked, didn't like and how we can improve."></FeedbackInput>
+              <FeedbackInput
+                width={50}
+                question="2. What is your job title?"
+              ></FeedbackInput>
+              <FeedbackInput
+                width={30}
+                question="3. What country are you located in?"
+              ></FeedbackInput>
+              <FeedbackInput
+                width={50}
+                question="4. What is your work email? We promise not to spam you."
+              ></FeedbackInput>
+              <div className="font-light text-zinc-200">
+                5. Let us know what you liked, didn't like and how we can
+                improve.
+                <Textarea className="bg-zinc-900 mt-1 border-[1px] font-light border-zinc-600 text-neutral-300 " />
+              </div>
             </div>
           ) : (
             <div className="flex flex-col justify-center items-center mt-20">
@@ -296,18 +407,20 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
               closeDialog();
             }}
           >
-            Cancel
+            Close
           </CarouselButton>
 
-          <CarouselButton
-            variant="nice"
-            onClick={() => {
-              console.log("feedback submitted");
-              setFeedback(true);
-            }}
-          >
-            Submit Feedback
-          </CarouselButton>
+          {!feedback && (
+            <CarouselButton
+              variant="nice"
+              onClick={() => {
+                console.log("feedback submitted");
+                setFeedback(true);
+              }}
+            >
+              Submit Feedback
+            </CarouselButton>
+          )}
         </>
       ),
     },
@@ -324,27 +437,29 @@ export function CarouselDemo({ closeDialog }: { closeDialog: Function }) {
   return (
     <Carousel className="w-full max-w-xl">
       <CarouselContent>
-        {carouselConfig.map((item, index) => (
-          <CarouselItem
-            className=" h-[30rem] flex flex-col justify-between "
-            key={index}
-          >
-            <div className="self-start">
-              <HeroTitle
-                animation={false}
-                size="small"
-                title={item.title}
-              ></HeroTitle>
-            </div>
-            <br />
-            <div className="font-light my-5 -mt-1 border border-b-white text-neutral-400 flex-1 py-3 overflow-y-auto">
-              {item.content}
-            </div>
-            <div className="flex justify-end gap-5 items-center">
-              {item.footer}
-            </div>
-          </CarouselItem>
-        ))}
+        {(type == "feedback" ? carouselConfigFeedback : carouselConfig).map(
+          (item, index) => (
+            <CarouselItem
+              className=" h-[30rem] w-full flex flex-col justify-between "
+              key={index}
+            >
+              <div className="self-start">
+                <HeroTitle
+                  animation={false}
+                  size="small"
+                  title={item.title}
+                ></HeroTitle>
+              </div>
+              <br />
+              <div className="font-light my-5 -mt-1 border border-transparent border-b-white text-neutral-400 flex-1 py-3 overflow-y-auto">
+                {item.content}
+              </div>
+              <div className="flex justify-end mr-1 mb-1 gap-5 items-center">
+                {item.footer}
+              </div>
+            </CarouselItem>
+          ),
+        )}
 
         <CarouselNext id="carousalNextButton" hidden={true}></CarouselNext>
         <CarouselPrevious
@@ -368,7 +483,7 @@ function CarouselButton({
   return (
     <Button
       onClick={onClick}
-      className={`text-white z-[999] ${variant == "nice" ? "bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] text-white" : "text-white bg-transparent border-white"}  py-2 px-4 hover:bg-transparent rounded-[6px] hover:-translate-y-1 transform transition duration-200 hover:shadow-md`}
+      className={`text-white z-[999] ${variant == "nice" ? "bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] text-white" : "text-white bg-transparent border-white"}  py-2 px-4 hover:bg-transparent rounded-[6px] transform transition-transform duration-200 hover:scale-105 active:scale-100`}
       variant={variant == "nice" ? "default" : "outline"}
     >
       {children}
@@ -378,15 +493,21 @@ function CarouselButton({
 <button className="px-4 py-2 rounded-md border border-neutral-300 bg-neutral-100 text-neutral-500 text-sm hover:-translate-y-1 transform transition duration-200 hover:shadow-md">
   Simple
 </button>;
-function FeedbackInput({ question }: { question: string }) {
+function FeedbackInput({
+  question,
+  width = 100,
+}: {
+  question: string;
+  width?: number;
+}) {
   return (
-    <div className="flex flex-col space-y-1.5">
+    <div className={`flex flex-col space-y-1.5 `}>
       <Label className="text-neutral-300 font-light" htmlFor={question}>
         {question}
       </Label>
       <Input
         id={question}
-        className="bg-zinc-900 border-[1px] font-light border-zinc-600"
+        className={`bg-zinc-900 border-[1px] font-light w-[${width}%] border-zinc-600`}
       />
     </div>
   );

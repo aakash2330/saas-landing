@@ -7,6 +7,7 @@ import { BarChartExample } from "./bar-chart";
 import { BackgroundGradientAnimation } from "./ui/gradiant-background";
 import { Navbar } from "./navbar";
 import { DrawerDialogDemo } from "./ui/responsiveDrawerDialog";
+import { DrawerDialogFeedback } from "./ui/responsiveDrawerDialogFeedback";
 
 const DynamicLineDrawingAnimation = dynamic(
   () => import("../components/graph-animation"),
@@ -40,8 +41,8 @@ export function Aurora() {
   return (
     <BackgroundGradientAnimation>
       <Navbar></Navbar>
-      <div className="flex mt-[10%] py-20 justify-center items-center">
-        <div className="z-[900]">
+      <div className="flex mt-[10%] py-20 flex-col sm:flex-row justify-center items-center">
+        <div className="z-[900] ">
           <BarChartExample></BarChartExample>
         </div>
         <div className="flex flex-col justify-center gap-14 items-center">
@@ -65,9 +66,12 @@ export function Aurora() {
               correlations, statistics and graphs
             </motion.div>
           </div>
-          <DrawerDialogDemo></DrawerDialogDemo>
+          <div className="flex gap-5">
+            <DrawerDialogDemo></DrawerDialogDemo>
+            <DrawerDialogFeedback></DrawerDialogFeedback>
+          </div>
         </div>
-        <div className="size-[15rem] -translate-y-10 flex justify-center items-center">
+        <div className="size-[15rem] hidden md:flex -translate-y-10 justify-center items-center">
           <DynamicLineDrawingAnimation></DynamicLineDrawingAnimation>
         </div>
       </div>

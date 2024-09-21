@@ -14,7 +14,9 @@ export default function Home() {
     <div className="min-h-screen   flex flex-col justify-center items-center  antialiased">
       <Aurora></Aurora>
       <HeroSection></HeroSection>
-      <LogoTicker></LogoTicker>
+      <div className="hidden w-full sm:block">
+        <LogoTicker></LogoTicker>
+      </div>
       <TimelineDemo></TimelineDemo>
       <StickyScrollRevealDemo></StickyScrollRevealDemo>
       <Features></Features>

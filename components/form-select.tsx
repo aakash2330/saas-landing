@@ -29,7 +29,7 @@ export function SelectGroupItem({
   indexValue: number;
 }) {
   return (
-    <div className="flex justify-between items-center gap-1">
+    <div className="flex w-full justify-between items-center gap-1">
       <div className="mr-2">{indexValue + 1}.</div>
       <div>
         <Select
@@ -42,10 +42,10 @@ export function SelectGroupItem({
             });
           }}
         >
-          <SelectTrigger className="w-[220px] bg-neutral-950 border-none">
-            <SelectValue placeholder="Column 2" />
+          <SelectTrigger className="w-[240px] mt-1 bg-neutral-950 border-none">
+            <SelectValue placeholder="Column 1" />
           </SelectTrigger>
-          <SelectContent className="z-[999] bg-neutral-900">
+          <SelectContent className="z-[999] border-none bg-neutral-900">
             <SelectGroup className="">
               {columns.map((item, index) => {
                 return (
@@ -72,10 +72,10 @@ export function SelectGroupItem({
             });
           }}
         >
-          <SelectTrigger className="w-[220px] bg-neutral-950 border-none">
+          <SelectTrigger className="w-[240px] mt-1 bg-neutral-950 border-none">
             <SelectValue placeholder="Column 2" />
           </SelectTrigger>
-          <SelectContent className="z-[999] bg-neutral-900">
+          <SelectContent className="z-[999] border-none bg-neutral-900">
             <SelectGroup>
               {columns.map((item, index) => {
                 return (

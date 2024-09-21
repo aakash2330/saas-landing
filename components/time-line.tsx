@@ -10,11 +10,11 @@ export function TimelineDemo() {
   const data = [
     {
       title: (
-        <div>
-          <span className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-transparent ">
+        <div className="flex md:block gap-1.5">
+          <span className="block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-transparent ">
             Unstructured
           </span>
-          <span className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-white ">
+          <span className="block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-white ">
             Text Analysis
           </span>
         </div>
@@ -40,11 +40,11 @@ export function TimelineDemo() {
 
     {
       title: (
-        <div>
-          <span className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-white ">
+        <div className="flex md:block gap-1.5">
+          <span className="block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-white ">
             Advanced
           </span>
-          <span className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-transparent ">
+          <span className="block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-transparent ">
             Hypothesis Tests
           </span>
         </div>
@@ -72,11 +72,11 @@ export function TimelineDemo() {
     },
     {
       title: (
-        <div>
-          <span className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-transparent ">
+        <div className="flex md:block gap-1.5">
+          <span className=" block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-transparent ">
             Custom
           </span>
-          <span className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-white ">
+          <span className=" block text-xl md:pl-20 md:text-5xl font-bold  bg-gradient-to-r from-[#1764FC] via-[#9F1BB5] to-[#F4771C] bg-clip-text text-white ">
             Reports
           </span>
         </div>
@@ -87,7 +87,7 @@ export function TimelineDemo() {
             {` We can even conduct custom statistical analysis based on your use cases & Can generate fully bespoke reports with your company's branding to seamlessly fit with your workflows.
 `}
             <br />
-            Reach out to <HeroEmail/>
+            Reach out to <HeroEmail />
           </div>
           <div className="grid grid-cols-4 gap-4">
             <Image

@@ -44,7 +44,7 @@ export default function HeroSection() {
 
         <div className="flex justify-center items-center">
           <button
-            className="text-white z-[999]  py-2 px-4 rounded-xl transform transition-transform duration-200 hover:scale-105"
+            className="text-white z-[999]  py-2 px-4 rounded-[6px] transform transition-transform duration-200 hover:scale-105"
             style={{
               background:
                 "linear-gradient(130deg, #1764FC 0%, #9F1BB5 50%, #F4771C 100%)",
