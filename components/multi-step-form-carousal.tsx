@@ -122,7 +122,7 @@ export function CarouselDemo({
               </div>
             </div>
           ) : (
-            <div className="flex flex-col justify-center items-center mt-20">
+            <div className="flex flex-col justify-center h-full text-center items-center mt-20">
               <div className="text-2xl font-bold text-neutral-200">
                 Thank you sooo much!
               </div>

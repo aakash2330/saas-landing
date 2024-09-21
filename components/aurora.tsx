@@ -67,7 +67,7 @@ export function Aurora() {
             </motion.div>
           </div>
           <div className="flex gap-5 flex-col md:flex-row">
-            <DrawerDialogDemo></DrawerDialogDemo>
+            <DrawerDialogDemo title="Upload your excel file"></DrawerDialogDemo>
             <DrawerDialogFeedback></DrawerDialogFeedback>
           </div>
         </div>

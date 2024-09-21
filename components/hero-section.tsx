@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import heroImage from "../public/Hero_new.png";
 import { HeroTitle } from "./hero-title";
+import { DrawerDialogDemo } from "./ui/responsiveDrawerDialog";
 
 export default function HeroSection() {
   const ref = useRef(null);
@@ -41,15 +42,10 @@ export default function HeroSection() {
         </div>
 
         <div className="flex justify-center items-center">
-          <button
-            className="text-white z-[999]  py-2 px-4 rounded-[6px] transform transition-transform duration-200 hover:scale-105"
-            style={{
-              background:
-                "linear-gradient(130deg, #1764FC 0%, #9F1BB5 50%, #F4771C 100%)",
-            }}
-          >
-            Upload your Excel file
-          </button>
+          <DrawerDialogDemo
+            title="Upload your excel file"
+            type="secondary"
+          ></DrawerDialogDemo>
         </div>
       </div>
     </section>

@@ -55,7 +55,7 @@ export function DrawerDialogFeedback() {
         </button>
       </DrawerTrigger>
       <DrawerContent className="z-[1000] p-5 bg-zinc-800 border-none ">
-        <CarouselDemo type="full" closeDialog={closeDrawer}></CarouselDemo>
+        <CarouselDemo type="feedback" closeDialog={closeDrawer}></CarouselDemo>
         <DrawerClose className="hidden" id="closeDrawerButton"></DrawerClose>
       </DrawerContent>
     </Drawer>

@@ -8,6 +8,7 @@ import img4 from "../../public/assets/Image4.png";
 import { cn } from "@/lib/utils";
 import { HeroTitle } from "../hero-title";
 import { color } from "snapsvg";
+import { DrawerDialogDemo } from "./responsiveDrawerDialog";
 
 const content = [
   {
@@ -148,15 +149,10 @@ export function StickyScrollRevealDemo() {
       <br />
       <br />
       <div className="flex justify-center items-center">
-        <button
-          className="text-white z-[999]  py-2 px-4 rounded-[6px] transform transition-transform duration-200 hover:scale-105"
-          style={{
-            background:
-              "linear-gradient(130deg, #1764FC 0%, #9F1BB5 50%, #F4771C 100%)",
-          }}
-        >
-          Get started for free
-        </button>
+        <DrawerDialogDemo
+          title="Get started for free"
+          type="secondary"
+        ></DrawerDialogDemo>
       </div>
     </div>
   );
