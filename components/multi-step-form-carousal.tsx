@@ -74,7 +74,7 @@ export function CarouselDemo({
 
   const carouselConfigFeedback = [
     {
-      title: "Feedback",
+      title: "Give Feedback",
       content: (
         <div className="font-light h-full  text-sm">
           {!feedback ? (
@@ -122,7 +122,7 @@ export function CarouselDemo({
               </div>
             </div>
           ) : (
-            <div className="flex flex-col justify-center h-full text-center items-center mt-20">
+            <div className="flex flex-col  h-full justify-center items-center">
               <div className="text-2xl font-bold text-neutral-200">
                 Thank you sooo much!
               </div>
@@ -435,7 +435,7 @@ export function CarouselDemo({
   }
 
   return (
-    <Carousel className="w-full max-w-xl">
+    <Carousel className="w-[40rem]">
       <CarouselContent>
         {(type == "feedback" ? carouselConfigFeedback : carouselConfig).map(
           (item, index) => (
