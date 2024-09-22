@@ -9,6 +9,7 @@ import {
 import { useMediaQuery } from "@/hooks/useMediaQueryShad";
 import { CarouselDemo } from "../multi-step-form-carousal";
 import { DialogClose } from "@radix-ui/react-dialog";
+import { Button } from "./button";
 
 export function DrawerDialogFeedback() {
   const [open, setOpen] = React.useState(false);
@@ -26,15 +27,12 @@ export function DrawerDialogFeedback() {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-            <button
-              className="text-white z-[999] w-[15rem]  py-2 px-4 rounded-[6px] transform transition-transform duration-200 hover:scale-105"
-              style={{
-                background:
-                  "linear-gradient(130deg, #1764FC 0%, #9F1BB5 50%, #F4771C 100%)",
-              }}
-            >
-            Give feedback
-            </button>
+          <Button
+            className="bg-transparent z-[999] w-[15rem] border-white rounded-[6px] hover:bg-transparent"
+            variant={"outline"}
+          >
+            Give Feedback
+          </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-fit flex justify-center items-center bg-zinc-800 z-[999]">
           <CarouselDemo
@@ -50,15 +48,12 @@ export function DrawerDialogFeedback() {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-            <button
-              className="text-white z-[999] w-[15rem]  py-2 px-4 rounded-[6px] transform transition-transform duration-200 hover:scale-105"
-              style={{
-                background:
-                  "linear-gradient(130deg, #1764FC 0%, #9F1BB5 50%, #F4771C 100%)",
-              }}
-            >
-            Give feedback
-            </button>
+          <Button
+            className="bg-transparent z-[999] w-[15rem] border-white rounded-[6px] hover:bg-transparent"
+            variant={"outline"}
+          >
+            Give Feedback
+          </Button>
       </DrawerTrigger>
       <DrawerContent className="z-[1000] p-5 bg-zinc-800 border-none ">
         <CarouselDemo type="feedback" closeDialog={closeDrawer}></CarouselDemo>
